@@ -4,8 +4,8 @@ package Clases;
 public class ListaAristas {
     Arista cabeza;
 
-    public void agregar(Municipio destino, int distancia) {
-        Arista nueva = new Arista(destino, distancia);
+    public void agregar(Municipio destino, int peso) {
+        Arista nueva = new Arista(destino, peso);
         nueva.siguiente = cabeza;
         cabeza = nueva;
     }

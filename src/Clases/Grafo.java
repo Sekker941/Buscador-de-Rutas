@@ -12,13 +12,13 @@ public class Grafo {
         this.cantidad = 0;
     }
 
-    public void agregarMunicipio(String nombre) {
+    public void agregarVertice(String nombre) {
         if (cantidad < capacidadMaxima) {
             vertices[cantidad++] = new Municipio(nombre);
         }
     }
 
-    public Municipio buscarMunicipio(String nombre) {
+    public Municipio buscarVertice(String nombre) {
         for (int i = 0; i < cantidad; i++) {
             if (vertices[i].nombre.equals(nombre)) {
                 return vertices[i];
@@ -28,8 +28,8 @@ public class Grafo {
     }
 
     public void agregarArista(String origenNombre, String destinoNombre, int peso, boolean bidireccional) {
-        Municipio origen = buscarMunicipio(origenNombre);
-        Municipio destino = buscarMunicipio(destinoNombre);
+        Municipio origen = buscarVertice(origenNombre);
+        Municipio destino = buscarVertice(destinoNombre);
 
         if (origen != null && destino != null) {
             origen.listaAdyacencia.agregar(destino, peso);

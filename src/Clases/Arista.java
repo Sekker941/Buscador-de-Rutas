@@ -6,9 +6,9 @@ public class Arista {
     public int distancia;
     public Arista siguiente;
 
-    public Arista(Municipio destino, int distancia) {
+    public Arista(Municipio destino, int peso) {
         this.destino = destino;
-        this.distancia = distancia;
+        this.distancia = peso;
         this.siguiente = null;
     }
 }
