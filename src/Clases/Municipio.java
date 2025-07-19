@@ -2,7 +2,7 @@
 package Clases;
 
 public class Municipio {
-    String nombre; // Ej: "Medellín"
+    String nombre;
     ListaAristas listaAdyacencia;
 
     public Municipio(String nombre) {

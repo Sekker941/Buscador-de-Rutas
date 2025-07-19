@@ -2,13 +2,13 @@
 package Clases;
 
 public class Arista {
-    public Municipio destino;  // Enlace directo al vértice destino
+    public Municipio destino; 
     public int distancia;
     public Arista siguiente;
 
-    public Arista(Municipio destino, int peso) {
+    public Arista(Municipio destino, int distancia) {
         this.destino = destino;
-        this.distancia = peso;
+        this.distancia = distancia;
         this.siguiente = null;
     }
 }
