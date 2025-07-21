@@ -9,4 +9,12 @@ public class Municipio {
         this.nombre = nombre;
         this.listaAdyacencia = new ListaAristas();
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public ListaAristas getListaAdyacencia() {
+        return listaAdyacencia;
+    }
 }

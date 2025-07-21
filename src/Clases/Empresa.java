@@ -37,7 +37,7 @@ public class Empresa {
 
     // Elimina la ruta con el ID dado
     public boolean eliminarRutaPorId(int id) {
-        for (int i = 0; i < rutas.tamano(); i++) {
+        for (int i = 0; i < rutas.size(); i++) {
             Ruta r = rutas.obtener(i);
             if (r.getId() == id) {
                 return rutas.eliminar(i);
@@ -48,7 +48,7 @@ public class Empresa {
 
     // Modifica los atributos de la ruta con el ID dado
     public boolean modificarRutaPorId(int id, double nuevoPrecio, String nuevoTipoVehiculo, String nuevaHoraSalida, int nuevaCantidadAsientos) {
-        for (int i = 0; i < rutas.tamano(); i++) {
+        for (int i = 0; i < rutas.size(); i++) {
             Ruta r = rutas.obtener(i);
             if (r.getId() == id) {
                 r.setPrecio(nuevoPrecio);
@@ -75,8 +75,8 @@ public class Empresa {
 
     // Obtiene todas las rutas
     public Ruta[] obtenerRutas() {
-        Ruta[] lista = new Ruta[rutas.tamano()];
-        for (int i = 0; i < rutas.tamano(); i++) {
+        Ruta[] lista = new Ruta[rutas.size()];
+        for (int i = 0; i < rutas.size(); i++) {
             lista[i] = rutas.obtener(i);
         }
         return lista;

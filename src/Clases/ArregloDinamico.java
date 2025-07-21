@@ -25,7 +25,7 @@ public class ArregloDinamico<T> {
         return (T) elementos[indice];
     }
 
-    public int tamano() {
+    public int size() {
         return longitud;
     }
 

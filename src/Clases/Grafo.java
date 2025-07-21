@@ -98,7 +98,7 @@ public class Grafo {
             return new Municipio[0]; // No hay ruta
         }
 
-        // Cuenta longitud de la ruta
+        // Cuenta size de la ruta
         int len = 0;
         for (int at = destinoIdx; at != -1; at = prev[at]) {
             len++;
@@ -111,6 +111,50 @@ public class Grafo {
         }
 
         return ruta;
+    }
+    
+    //Comprobador de rutas
+    public ArregloDinamico<Ruta> buscarRutasCoincidentes(Municipio[] recorridoBuscado, ArregloDinamico<Ruta> rutas) {
+        ArregloDinamico<Ruta> coincidentes = new ArregloDinamico<>();
+
+        for (int i = 0; i < rutas.size(); i++) {
+            Ruta actual = rutas.obtener(i);
+            Municipio[] recorridoActual = actual.getRecorrido();
+
+            if (contieneSubsecuencia(recorridoActual, recorridoBuscado)) {
+                coincidentes.agregar(actual);
+            }
+        }
+
+        return coincidentes;
+    }
+    
+    //Comprobador Subrutas
+    private boolean contieneSubsecuencia(Municipio[] recorridoActual, Municipio[] recorridoBuscado) {
+        int i = 0, j = 0;
+
+        while (i < recorridoActual.length && j < recorridoBuscado.length) {
+            if (recorridoActual[i].getNombre().equalsIgnoreCase(recorridoBuscado[j].getNombre())) {
+                j++;
+            }
+            i++;
+        }
+
+        return j == recorridoBuscado.length;
+    }
+    
+    //Filtro por tipo de vehiculo
+    public ArregloDinamico<Ruta> filtrarPorTipoVehiculo(ArregloDinamico<Ruta> rutas, String tipoVehiculoDeseado) {
+        ArregloDinamico<Ruta> filtradas = new ArregloDinamico<>();
+
+        for (int i = 0; i < rutas.size(); i++) {
+            Ruta actual = rutas.obtener(i);
+            if (actual.getTipoVehiculo().equalsIgnoreCase(tipoVehiculoDeseado)) {
+                filtradas.agregar(actual);
+            }
+        }
+
+        return filtradas;
     }
 
     public void mostrarGrafo() {
