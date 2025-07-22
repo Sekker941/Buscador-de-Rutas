@@ -2077,7 +2077,7 @@
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="botonInicioHistorial" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButton19" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="botonSalirHistorial" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
@@ -2091,7 +2091,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="botonInicioHistorial" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButton19" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="botonSalirHistorial" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -2127,7 +2127,7 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton19">
+        <Component class="javax.swing.JButton" name="botonSalirHistorial">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="e5" red="cc" type="rgb"/>
@@ -2143,6 +2143,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSalirHistorialActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonInicioHistorial">
           <Properties>
@@ -2216,7 +2219,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <Component id="jLabel41" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton31" min="-2" pref="180" max="-2" attributes="0"/>
+                  <Component id="botonSalirEmpresa" min="-2" pref="180" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
@@ -2243,7 +2246,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="jButton31" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="botonSalirEmpresa" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -2719,7 +2722,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton31">
+        <Component class="javax.swing.JButton" name="botonSalirEmpresa">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="e5" red="cc" type="rgb"/>
@@ -2735,6 +2738,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSalirEmpresaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
