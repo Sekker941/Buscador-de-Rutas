@@ -4,9 +4,13 @@
  */
 package GUI;
 import Clases.*;
+import java.awt.CardLayout;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 public class mainFrame extends javax.swing.JFrame {
 
@@ -2248,7 +2252,13 @@ public class mainFrame extends javax.swing.JFrame {
         String correo = correoL.getText();
         String contraseña = contraseñaL.getText();
         try {
-            sistema.loginViajero(correo, contraseña);
+            if (sistema.loginViajero(correo, contraseña)){
+                CardLayout cl = (CardLayout) getContentPane().getLayout();
+                cl.show(getContentPane(), "card2");
+            }
+            else{
+                 JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2262,6 +2272,8 @@ public class mainFrame extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "card2");
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void correoLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoLEActionPerformed
