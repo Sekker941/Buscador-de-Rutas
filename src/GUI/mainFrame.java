@@ -308,7 +308,6 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Registrate");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField2.setText("Nombres");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,7 +315,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField4.setText("Apellidos");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,7 +322,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField5.setText("Correo Electrónico");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,7 +329,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField6.setText("Contraseña");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,7 +514,6 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Registro");
 
-        jTextField9.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField9.setText("Razón Social");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -526,7 +521,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField10.setText("NIT");
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -534,7 +528,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField11.setText("Nombre Completo Representante Legal");
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -542,7 +535,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField12.setText("Teléfono de Atención al Cliente");
         jTextField12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -560,7 +552,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField13.setText("Dirección Principal Física de Oficinas");
         jTextField13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -568,7 +559,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField14.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField14.setText("Sitio Web");
         jTextField14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -576,7 +566,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField15.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField15.setText("Correo Electrónico");
         jTextField15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -584,7 +573,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField16.setText("Contraseña");
         jTextField16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -802,7 +790,7 @@ public class mainFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                                .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
@@ -843,11 +831,12 @@ public class mainFrame extends javax.swing.JFrame {
                                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -910,7 +899,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(84, 84, 84)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1306,9 +1295,9 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DetallesRutaLayout.createSequentialGroup()
@@ -1527,10 +1516,8 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox16.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Origen", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox17.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox17.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
         jComboBox17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1538,7 +1525,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField25.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField25.setText("01/06/2001");
         jTextField25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1546,7 +1532,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField26.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField26.setText("18:45");
         jTextField26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1554,10 +1539,8 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox18.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField27.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField27.setText("Costo Pasaje Tipo A, Tipo B");
         jTextField27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1614,7 +1597,6 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("Modificar Rutas Existentes");
 
-        jTextField22.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField22.setText("01/06/2001");
         jTextField22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1622,7 +1604,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField23.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField23.setText("18:45");
         jTextField23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1630,7 +1611,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField24.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextField24.setText("Costo Pasaje Tipo A, Tipo B");
         jTextField24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1658,13 +1638,10 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox11.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox12.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Origen", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox13.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
         jComboBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1672,7 +1649,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox14.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -1719,7 +1695,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton24)
                     .addComponent(jButton25))
-                .addGap(0, 96, Short.MAX_VALUE))
+                .addGap(0, 115, Short.MAX_VALUE))
         );
 
         jPanel18.setBackground(new java.awt.Color(0, 102, 255));
@@ -2072,7 +2048,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jComboBox20.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBox20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ruta", "Item 2", "Item 3", "Item 4" }));
 
         jPanel23.setBackground(new java.awt.Color(204, 229, 255));
@@ -2622,7 +2597,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;

@@ -18,13 +18,13 @@ public class SistemaRegistro {
     }
 
     // Registro de viajero en CSV
-    public boolean registrarViajero(String usuario, String contraseña) throws IOException {
-        if (buscarViajero(usuario) != null){
+    public boolean registrarViajero(String correo, String contraseña) throws IOException {
+        if (buscarViajero(correo) != null){
             return false;
         }
         try (FileWriter fw = new FileWriter(fileViajeros, true);
             BufferedWriter bw = new BufferedWriter(fw)) {
-            Viajero v = new Viajero(usuario, contraseña);
+            Viajero v = new Viajero(correo, contraseña);
             bw.write(v.toCSV());
             bw.newLine();
         }
@@ -32,18 +32,18 @@ public class SistemaRegistro {
     }
 
     // Login de viajero
-    public boolean loginViajero(String usuario, String contraseña) throws IOException {
-        Viajero v = buscarViajero(usuario);
-        return v != null && v.verificarCredenciales(usuario, contraseña);
+    public boolean loginViajero(String correo, String contraseña) throws IOException {
+        Viajero v = buscarViajero(correo);
+        return v != null && v.verificarCredenciales(correo, contraseña);
     }
 
-    private Viajero buscarViajero(String usuario) throws IOException {
+    private Viajero buscarViajero(String correo) throws IOException {
         try (FileReader fr = new FileReader(fileViajeros);
             BufferedReader br = new BufferedReader(fr)) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 Viajero v = Viajero.fromCSV(linea);
-                if (v != null && v.getUsuario().equals(usuario)) {
+                if (v != null && v.getUsuario().equals(correo)) {
                     return v;
                 }
             }

@@ -2,25 +2,25 @@
 package Clases;
 
 public class Viajero {
-    private String usuario;
+    private String correo;
     private String contraseña;
 
-    public Viajero(String usuario, String contraseña) {
-        this.usuario = usuario;
+    public Viajero(String correo, String contraseña) {
+        this.correo = correo;
         this.contraseña = contraseña;
     }
 
     public String getUsuario() {
-        return usuario;
+        return correo;
     }
 
-    public boolean verificarCredenciales(String usuario, String contraseña) {
-        return this.usuario.equals(usuario) && this.contraseña.equals(contraseña);
+    public boolean verificarCredenciales(String correo, String contraseña) {
+        return this.correo.equals(correo) && this.contraseña.equals(contraseña);
     }
 
-    // Serializa como línea CSV: usuario,contraseña
+    // Serializa como línea CSV: correo,contraseña
     public String toCSV() {
-        return usuario + "," + contraseña;
+        return correo + "," + contraseña;
     }
 
     // Deserializa desde línea CSV
