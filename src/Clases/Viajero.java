@@ -31,4 +31,9 @@ public class Viajero {
         if (partes.length != 2) return null;
         return new Viajero(partes[0], partes[1]);
     }
+
+    public ArregloDinamico<Ruta> getHistorial() {
+        return historial;
+    }
+    
 }
