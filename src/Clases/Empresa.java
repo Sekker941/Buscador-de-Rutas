@@ -19,18 +19,22 @@ public class Empresa {
         this.rutas = new ArregloDinamico<>();
         this.siguienteId = 1;
     }
-
-    public String getNombre() {
-        return nombre;
+    
+    public Empresa(String correo, String contraseña) {
+        this("", "", correo, "", contraseña); // Llama al constructor completo
     }
 
-    public boolean verificarCredenciales(String nombre, String contraseña) {
-        return this.nombre.equals(nombre) && this.contraseña.equals(contraseña);
+    public String getCorreo() {
+        return correo;
+    }
+
+    public boolean verificarCredenciales(String correo, String contraseña) {
+        return this.nombre.equals(correo) && this.contraseña.equals(contraseña);
     }
 
     // Crea y agrega una nueva ruta, asignando ID automáticamente
-    public Ruta crearRuta(Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, String horarioViaje, int cantidadAsientos) {
-        Ruta ruta = new Ruta(siguienteId++, recorrido, precio, tipoVehiculo, horaSalida, horarioViaje, cantidadAsientos);
+    public Ruta crearRuta(int id, Municipio[] recorrido, double precio, String tipoVehiculo, String horarioViaje, String horaSalida, int cantidadAsientos, String fecha) {
+        Ruta ruta = new Ruta(siguienteId++, recorrido, precio, tipoVehiculo, horaSalida, horarioViaje, cantidadAsientos, fecha);
         rutas.agregar(ruta);
         return ruta;
     }
@@ -63,14 +67,14 @@ public class Empresa {
 
     // Serializa la empresa y sus rutas a CSV
     public String toCSV() {
-        return nombre + "," + NIT + "," + correo + "," + telefono + "," + contraseña;
+        return correo + ";" + contraseña;
     }
 
     // Deserializa una empresa (sin rutas) desde CSV
     public static Empresa fromCSV(String linea) {
-        String[] parts = linea.split(",");
-        if (parts.length != 5) return null;
-        return new Empresa(parts[0], parts[1], parts[2], parts[3], parts[4]);
+        String[] partes = linea.split(";");
+        if (partes.length != 2) return null;
+        return new Empresa(partes[0].trim(), partes[1].trim());
     }
 
     // Obtiene todas las rutas

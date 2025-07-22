@@ -54,28 +54,31 @@ public class SistemaRegistro {
     // Registro de empresa en CSV
     public boolean registrarEmpresa(String nombre, String NIT, String correo, String telefono, String contraseña) throws IOException {
         if (buscarEmpresa(nombre) != null) return false;
+
         try (FileWriter fw = new FileWriter(fileEmpresas, true);
-            BufferedWriter bw = new BufferedWriter(fw)) {
-            Empresa e = new Empresa(nombre, NIT, correo, telefono, contraseña);
+             BufferedWriter bw = new BufferedWriter(fw)) {
+
+            Empresa e = new Empresa(correo, contraseña);
             bw.write(e.toCSV());
             bw.newLine();
         }
+
         return true;
     }
 
     // Login de empresa
-    public boolean loginEmpresa(String nombre, String contraseña) throws IOException {
-        Empresa e = buscarEmpresa(nombre);
-        return e != null && e.verificarCredenciales(nombre, contraseña);
+    public boolean loginEmpresa(String correo, String contraseña) throws IOException {
+        Empresa e = buscarEmpresa(correo);
+        return e != null && e.verificarCredenciales(correo, contraseña);
     }
 
-    private Empresa buscarEmpresa(String nombre) throws IOException {
+    private Empresa buscarEmpresa(String correo) throws IOException {
         try (FileReader fr = new FileReader(fileEmpresas);
-            BufferedReader br = new BufferedReader(fr)) {
+             BufferedReader br = new BufferedReader(fr)) {
             String linea;
             while ((linea = br.readLine()) != null) {
                 Empresa e = Empresa.fromCSV(linea);
-                if (e != null && e.getNombre().equals(nombre)) {
+                if (e != null && e.getCorreo().equals(correo)) {
                     return e;
                 }
             }
