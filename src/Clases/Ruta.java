@@ -9,14 +9,16 @@ public class Ruta implements Comparable<Ruta> {
     private double precio;                
     private String tipoVehiculo;          
     private String horaSalida;            // Formato: "HH:mm"
+    private String horarioViaje;          // Diurno o nocturno
     private int cantidadAsientos;         
 
-    public Ruta(int id, Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, int cantidadAsientos) {
+    public Ruta(int id, Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, String horarioViaje, int cantidadAsientos) {
         this.id = id;
         this.recorrido = recorrido;
         this.precio = precio;
         this.tipoVehiculo = tipoVehiculo;
         this.horaSalida = horaSalida;
+        this.horarioViaje = horarioViaje;
         this.cantidadAsientos = cantidadAsientos;
     }
 
@@ -52,6 +54,14 @@ public class Ruta implements Comparable<Ruta> {
         this.horaSalida = horaSalida;
     }
 
+    public String getHorarioViaje() {
+        return horarioViaje;
+    }
+
+    public void setHorarioViaje(String horarioViaje) {
+        this.horarioViaje = horarioViaje;
+    }
+    
     public int getCantidadAsientos() {
         return cantidadAsientos;
     }

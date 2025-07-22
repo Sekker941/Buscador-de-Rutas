@@ -156,6 +156,48 @@ public class Grafo {
 
         return filtradas;
     }
+    
+    public ArregloDinamico<Ruta> filtrarPorPrecio(ArregloDinamico<Ruta> rutas) {
+        ArregloDinamico<Ruta> filtradas = new ArregloDinamico<>();
+    
+    
+        Ruta[] temp = new Ruta[rutas.size()];
+        for (int i = 0; i < rutas.size(); i++) {
+            temp[i] = rutas.obtener(i);
+        }
+    
+    
+        for (int i = 0; i < temp.length - 1; i++) {
+            for (int j = 0; j < temp.length - i - 1; j++) {
+                if (temp[j].getPrecio() > temp[j + 1].getPrecio()) {
+                    
+                    Ruta aux = temp[j];
+                    temp[j] = temp[j + 1];
+                    temp[j + 1] = aux;
+                }
+            }
+        }
+    
+    
+        for (int i = 0; i < temp.length; i++) {
+            filtradas.agregar(temp[i]);
+        }
+    
+        return filtradas;
+    }
+
+    public ArregloDinamico<Ruta> filtrarPorHorario(ArregloDinamico<Ruta> rutas, String horarioDeseado) {
+        ArregloDinamico<Ruta> filtradas = new ArregloDinamico<>();
+
+        for (int i = 0; i < rutas.size(); i++) {
+            Ruta actual = rutas.obtener(i);
+            if (actual.getHorarioViaje().equalsIgnoreCase(horarioDeseado)) {
+                filtradas.agregar(actual);
+            }
+        }
+
+        return filtradas;
+    }
 
     public void mostrarGrafo() {
         for (int i = 0; i < cantidad; i++) {
