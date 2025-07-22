@@ -32,7 +32,7 @@ public class mainFrame extends javax.swing.JFrame {
 
         RegistroViajero = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        botonSoyEmpresa = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -48,7 +48,7 @@ public class mainFrame extends javax.swing.JFrame {
         botonRegistro = new javax.swing.JButton();
         RegistroEmpresa = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        botonSoyViajero = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -138,7 +138,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
-        RegistroModificaEliminaRutas = new javax.swing.JPanel();
+        InicioEmpresa = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jButton22 = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
@@ -213,12 +213,17 @@ public class mainFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 255));
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Soy una Empresa");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
+        botonSoyEmpresa.setBackground(new java.awt.Color(0, 102, 255));
+        botonSoyEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonSoyEmpresa.setForeground(new java.awt.Color(255, 255, 255));
+        botonSoyEmpresa.setText("Soy una Empresa");
+        botonSoyEmpresa.setBorder(null);
+        botonSoyEmpresa.setBorderPainted(false);
+        botonSoyEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSoyEmpresaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -226,14 +231,14 @@ public class mainFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(75, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonSoyEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonSoyEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -409,20 +414,20 @@ public class mainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(RegistroViajero, "card2");
+        getContentPane().add(RegistroViajero, "RegistroViajero");
 
         RegistroEmpresa.setBackground(new java.awt.Color(0, 102, 255));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 102, 255));
-        jButton4.setText("Soy Viajero");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botonSoyViajero.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        botonSoyViajero.setForeground(new java.awt.Color(0, 102, 255));
+        botonSoyViajero.setText("Soy Viajero");
+        botonSoyViajero.setBorder(null);
+        botonSoyViajero.setBorderPainted(false);
+        botonSoyViajero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botonSoyViajeroActionPerformed(evt);
             }
         });
 
@@ -432,14 +437,14 @@ public class mainFrame extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(75, Short.MAX_VALUE)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonSoyViajero, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonSoyViajero, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -656,7 +661,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(RegistroEmpresa, "card2");
+        getContentPane().add(RegistroEmpresa, "RegistroEmpresa");
 
         InicioViajero.setBackground(new java.awt.Color(234, 244, 255));
 
@@ -906,7 +911,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(InicioViajero, "card2");
+        getContentPane().add(InicioViajero, "InicioViajero");
 
         ResultadosBusqueda.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1038,7 +1043,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        getContentPane().add(ResultadosBusqueda, "card2");
+        getContentPane().add(ResultadosBusqueda, "ResultadosBusqueda");
 
         DetallesRuta.setBackground(new java.awt.Color(234, 244, 255));
 
@@ -1367,7 +1372,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(17, 17, 17))))
         );
 
-        getContentPane().add(DetallesRuta, "card2");
+        getContentPane().add(DetallesRuta, "DetallesRuta");
 
         Historial.setBackground(new java.awt.Color(0, 102, 255));
         Historial.setForeground(new java.awt.Color(255, 255, 255));
@@ -1465,9 +1470,9 @@ public class mainFrame extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        getContentPane().add(Historial, "card2");
+        getContentPane().add(Historial, "Historial");
 
-        RegistroModificaEliminaRutas.setBackground(new java.awt.Color(255, 255, 255));
+        InicioEmpresa.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel10.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -1732,47 +1737,47 @@ public class mainFrame extends javax.swing.JFrame {
         jButton31.setText("Salir");
         jButton31.setBorder(null);
 
-        javax.swing.GroupLayout RegistroModificaEliminaRutasLayout = new javax.swing.GroupLayout(RegistroModificaEliminaRutas);
-        RegistroModificaEliminaRutas.setLayout(RegistroModificaEliminaRutasLayout);
-        RegistroModificaEliminaRutasLayout.setHorizontalGroup(
-            RegistroModificaEliminaRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroModificaEliminaRutasLayout.createSequentialGroup()
+        javax.swing.GroupLayout InicioEmpresaLayout = new javax.swing.GroupLayout(InicioEmpresa);
+        InicioEmpresa.setLayout(InicioEmpresaLayout);
+        InicioEmpresaLayout.setHorizontalGroup(
+            InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
-            .addGroup(RegistroModificaEliminaRutasLayout.createSequentialGroup()
+            .addGroup(InicioEmpresaLayout.createSequentialGroup()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroModificaEliminaRutasLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
         );
-        RegistroModificaEliminaRutasLayout.setVerticalGroup(
-            RegistroModificaEliminaRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroModificaEliminaRutasLayout.createSequentialGroup()
-                .addGroup(RegistroModificaEliminaRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroModificaEliminaRutasLayout.createSequentialGroup()
+        InicioEmpresaLayout.setVerticalGroup(
+            InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
+                .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InicioEmpresaLayout.createSequentialGroup()
                         .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(RegistroModificaEliminaRutasLayout.createSequentialGroup()
+                    .addGroup(InicioEmpresaLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(RegistroModificaEliminaRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(RegistroModificaEliminaRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        getContentPane().add(RegistroModificaEliminaRutas, "card2");
+        getContentPane().add(InicioEmpresa, "InicioEmpresa");
 
         PerfilEmpresas.setBackground(new java.awt.Color(0, 102, 255));
 
@@ -1997,7 +2002,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(PerfilEmpresas, "card2");
+        getContentPane().add(PerfilEmpresas, "PerfilEmpresas");
 
         ActualizarAsientos.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2219,7 +2224,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(ActualizarAsientos, "card2");
+        getContentPane().add(ActualizarAsientos, "ActualizarAsientos");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2254,10 +2259,10 @@ public class mainFrame extends javax.swing.JFrame {
         try {
             if (sistema.loginViajero(correo, contraseña)){
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
-                cl.show(getContentPane(), "card2");
+                cl.show(getContentPane(), "InicioViajero");
             }
             else{
-                 JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -2268,12 +2273,16 @@ public class mainFrame extends javax.swing.JFrame {
         String correo = correoR.getText();
         String contraseña = contraseñaR.getText();
         try {
-            sistema.registrarViajero(correo, contraseña);
+            if (sistema.registrarViajero(correo, contraseña)){
+                CardLayout cl = (CardLayout) getContentPane().getLayout();
+                cl.show(getContentPane(), "InicioViajero");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Ya existe una cuenta con este correo", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "card2");
     }//GEN-LAST:event_botonRegistroActionPerformed
 
     private void correoLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoLEActionPerformed
@@ -2289,7 +2298,13 @@ public class mainFrame extends javax.swing.JFrame {
         String contraseña = contraseñaLE.getText();
 
         try {
-            sistema.loginEmpresa(correo, contraseña);
+            if (sistema.loginEmpresa(correo, contraseña)){
+                CardLayout cl = (CardLayout) getContentPane().getLayout();
+                cl.show(getContentPane(), "InicioEmpresa");
+            }
+            else{
+                 JOptionPane.showMessageDialog(this, "Credenciales incorrectas", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2319,15 +2334,22 @@ public class mainFrame extends javax.swing.JFrame {
         String contraseña = contraseñaRE.getText();
 
         try {
-            sistema.registrarEmpresa(nombre, nit, correo, telefono, contraseña);
+            if(sistema.registrarEmpresa(nombre, nit, correo, telefono, contraseña)){
+                CardLayout cl = (CardLayout) getContentPane().getLayout();
+                cl.show(getContentPane(), "InicioEmpresa");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Ya existe una cuenta con este correo", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botonRegistroEActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void botonSoyViajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSoyViajeroActionPerformed
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "RegistroViajero");
+    }//GEN-LAST:event_botonSoyViajeroActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
         // TODO add your handling code here:
@@ -2469,6 +2491,11 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField28ActionPerformed
 
+    private void botonSoyEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSoyEmpresaActionPerformed
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "RegistroEmpresa");
+    }//GEN-LAST:event_botonSoyEmpresaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2512,10 +2539,10 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel ActualizarAsientos;
     private javax.swing.JPanel DetallesRuta;
     private javax.swing.JPanel Historial;
+    private javax.swing.JPanel InicioEmpresa;
     private javax.swing.JPanel InicioViajero;
     private javax.swing.JPanel PerfilEmpresas;
     private javax.swing.JPanel RegistroEmpresa;
-    private javax.swing.JPanel RegistroModificaEliminaRutas;
     private javax.swing.JPanel RegistroViajero;
     private javax.swing.JPanel ResultadosBusqueda;
     private javax.swing.JTextField apellidoR;
@@ -2523,6 +2550,8 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton botonLoginE;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonRegistroE;
+    private javax.swing.JButton botonSoyEmpresa;
+    private javax.swing.JButton botonSoyViajero;
     private javax.swing.JTextField contraseñaL;
     private javax.swing.JTextField contraseñaLE;
     private javax.swing.JTextField contraseñaR;
@@ -2531,7 +2560,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField correoLE;
     private javax.swing.JTextField correoR;
     private javax.swing.JTextField correoRE;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -2555,7 +2583,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
     private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;

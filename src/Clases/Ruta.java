@@ -1,23 +1,26 @@
 
 package Clases;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Ruta implements Comparable<Ruta> {
-    private final int id;                 
-    private final Municipio[] recorrido;  
-    private double precio;                
-    private String tipoVehiculo;          
-    private String horaSalida;            // Formato: "HH:mm"
-    private int cantidadAsientos;         
+    private final int id;
+    private final Municipio[] recorrido;
+    private double precio;
+    private String tipoVehiculo;
+    private String horaSalida;     // Formato: "HH:mm"
+    private int cantidadAsientos;
+    private String fecha;          // Formato sugerido: "yyyy-MM-dd"
 
-    public Ruta(int id, Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, int cantidadAsientos) {
+    public Ruta(int id, Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, int cantidadAsientos, String fecha) {
         this.id = id;
         this.recorrido = recorrido;
         this.precio = precio;
         this.tipoVehiculo = tipoVehiculo;
         this.horaSalida = horaSalida;
         this.cantidadAsientos = cantidadAsientos;
+        this.fecha = fecha;
     }
 
     public int getId() {
@@ -60,10 +63,16 @@ public class Ruta implements Comparable<Ruta> {
         this.cantidadAsientos = cantidadAsientos;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
     @Override
     public int compareTo(Ruta otra) {
-        LocalTime t1 = LocalTime.parse(this.horaSalida);
-        LocalTime t2 = LocalTime.parse(otra.horaSalida);
-        return t1.compareTo(t2);
+        return this.horaSalida.compareTo(otra.horaSalida);
     }
 }

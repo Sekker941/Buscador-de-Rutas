@@ -4,10 +4,12 @@ package Clases;
 public class Viajero {
     private String correo;
     private String contraseña;
+    private ArregloDinamico<Ruta> historial;
 
     public Viajero(String correo, String contraseña) {
         this.correo = correo;
         this.contraseña = contraseña;
+        this.historial = new ArregloDinamico<>();
     }
 
     public String getUsuario() {
@@ -20,12 +22,12 @@ public class Viajero {
 
     // Serializa como línea CSV: correo,contraseña
     public String toCSV() {
-        return correo + "," + contraseña;
+        return correo + ";" + contraseña;
     }
 
     // Deserializa desde línea CSV
     public static Viajero fromCSV(String linea) {
-        String[] partes = linea.split(",");
+        String[] partes = linea.split(";");
         if (partes.length != 2) return null;
         return new Viajero(partes[0], partes[1]);
     }

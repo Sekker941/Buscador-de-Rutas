@@ -1,23 +1,16 @@
 
 package buscador_de_rutas;
 
-import Clases.Grafo;
+import Clases.SistemaRegistro;
+import GUI.mainFrame;
+import java.io.IOException;
 
 public class Buscador_de_rutas {
 
-    public static void main(String[] args) {
-        Grafo grafo = new Grafo(10);
-
-        grafo.agregarMunicipio("Medellín");
-        grafo.agregarMunicipio("Bogotá");
-        grafo.agregarMunicipio("Cali");
-        grafo.agregarMunicipio("Bucaramanga");
-
-        grafo.agregarArista("Medellín", "Bogotá", 8, true);
-        grafo.agregarArista("Medellín", "Cali", 12, true);
-        grafo.agregarArista("Bogotá", "Bucaramanga", 4, true);
-
-        grafo.mostrarGrafo();
+    public static void main(String[] args) throws IOException {
+        SistemaRegistro sistema = new SistemaRegistro();
+        mainFrame frame = new mainFrame();
+        frame.setVisible(true);
     }
     
 }
