@@ -4,20 +4,28 @@
  */
 package GUI;
 import Clases.*;
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 
 public class mainFrame extends javax.swing.JFrame {
 
     private SistemaRegistro sistema;
+    private Viajero viajeroActual;
+    private Empresa empresaActual;
     
     public mainFrame() throws IOException {
         this.sistema = new SistemaRegistro();
+        this.viajeroActual = null;
+        this.empresaActual = null;
         initComponents();
     }
 
@@ -134,10 +142,9 @@ public class mainFrame extends javax.swing.JFrame {
         Historial = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
+        botonInicioHistorial = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
+        panelHistorial = new javax.swing.JPanel();
         InicioEmpresa = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jButton22 = new javax.swing.JButton();
@@ -1391,14 +1398,14 @@ public class mainFrame extends javax.swing.JFrame {
         jButton19.setText("Salir");
         jButton19.setBorder(null);
 
-        jButton20.setBackground(new java.awt.Color(204, 229, 255));
-        jButton20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(0, 102, 255));
-        jButton20.setText("Inicio");
-        jButton20.setBorder(null);
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        botonInicioHistorial.setBackground(new java.awt.Color(204, 229, 255));
+        botonInicioHistorial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonInicioHistorial.setForeground(new java.awt.Color(0, 102, 255));
+        botonInicioHistorial.setText("Inicio");
+        botonInicioHistorial.setBorder(null);
+        botonInicioHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                botonInicioHistorialActionPerformed(evt);
             }
         });
 
@@ -1407,28 +1414,17 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel39.setText("Historico:");
 
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        panelHistorial.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel40.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel40.setText("UNA MATRIZ CON HISTORIAL DE VIAJES (FECHA,HORA,DEP.,MUN.,TERMINAL, ASIENTOS, ETC...");
-        jLabel40.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout panelHistorialLayout = new javax.swing.GroupLayout(panelHistorial);
+        panelHistorial.setLayout(panelHistorialLayout);
+        panelHistorialLayout.setHorizontalGroup(
+            panelHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-                .addContainerGap())
+        panelHistorialLayout.setVerticalGroup(
+            panelHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout HistorialLayout = new javax.swing.GroupLayout(Historial);
@@ -1444,10 +1440,10 @@ public class mainFrame extends javax.swing.JFrame {
                     .addGroup(HistorialLayout.createSequentialGroup()
                         .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panelHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(45, 45, 45)))
                 .addGroup(HistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonInicioHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39))
         );
@@ -1457,7 +1453,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(HistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(HistorialLayout.createSequentialGroup()
-                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonInicioHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -1466,7 +1462,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(573, 573, 573))
                     .addGroup(HistorialLayout.createSequentialGroup()
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panelHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -2258,6 +2254,7 @@ public class mainFrame extends javax.swing.JFrame {
         String contraseña = contraseñaL.getText();
         try {
             if (sistema.loginViajero(correo, contraseña)){
+                viajeroActual = new Viajero(correo, contraseña);
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
                 cl.show(getContentPane(), "InicioViajero");
             }
@@ -2274,6 +2271,7 @@ public class mainFrame extends javax.swing.JFrame {
         String contraseña = contraseñaR.getText();
         try {
             if (sistema.registrarViajero(correo, contraseña)){
+                viajeroActual = new Viajero(correo, contraseña);
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
                 cl.show(getContentPane(), "InicioViajero");
             }
@@ -2388,7 +2386,10 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        
+        viajeroActual.getHistorial();
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "Historial");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -2411,9 +2412,10 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    private void botonInicioHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicioHistorialActionPerformed
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "RegistroViajero");
+    }//GEN-LAST:event_botonInicioHistorialActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
@@ -2496,9 +2498,47 @@ public class mainFrame extends javax.swing.JFrame {
         cl.show(getContentPane(), "RegistroEmpresa");
     }//GEN-LAST:event_botonSoyEmpresaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void mostrarRutasEnPanel(ArregloDinamico<Ruta> rutas) {
+        // 1) Define las columnas
+        String[] columnas = {
+            "ID", "Precio", "Tipo Vehículo", "Hora Salida", "Asientos", "Fecha"
+        };
+
+        // 2) Crea el modelo de la tabla
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0) {
+            @Override
+            public boolean isCellEditable(int row, int col) {
+                return false; // nadie edita
+            }
+        };
+
+        // 3) Rellena filas
+        for (int i = 0; i < rutas.size(); i++) {
+            Ruta r = rutas.obtener(i);
+            Object[] fila = {
+                r.getId(),
+                r.getPrecio(),
+                r.getTipoVehiculo(),
+                r.getHoraSalida(),
+                r.getCantidadAsientos(),
+                r.getFecha()
+            };
+            modelo.addRow(fila);
+        }
+
+        // 4) Crea la tabla y scroll
+        JTable tabla = new JTable(modelo);
+        tabla.setAutoCreateRowSorter(true);
+        JScrollPane scroll = new JScrollPane(tabla);
+
+        // 5) Pinta en panelHistorial
+        panelHistorial.removeAll();
+        panelHistorial.setLayout(new BorderLayout());
+        panelHistorial.add(scroll, BorderLayout.CENTER);
+        panelHistorial.revalidate();
+        panelHistorial.repaint();
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2546,6 +2586,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel RegistroViajero;
     private javax.swing.JPanel ResultadosBusqueda;
     private javax.swing.JTextField apellidoR;
+    private javax.swing.JButton botonInicioHistorial;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonLoginE;
     private javax.swing.JButton botonRegistro;
@@ -2570,7 +2611,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
@@ -2638,7 +2678,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
@@ -2663,7 +2702,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -2709,6 +2747,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nitE;
     private javax.swing.JTextField nombreE;
     private javax.swing.JTextField nombreR;
+    private javax.swing.JPanel panelHistorial;
     private javax.swing.JTextField telefonoE;
     // End of variables declaration//GEN-END:variables
 }
