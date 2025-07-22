@@ -29,8 +29,8 @@ public class Empresa {
     }
 
     // Crea y agrega una nueva ruta, asignando ID automáticamente
-    public Ruta crearRuta(Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, int cantidadAsientos) {
-        Ruta ruta = new Ruta(siguienteId++, recorrido, precio, tipoVehiculo, horaSalida, cantidadAsientos);
+    public Ruta crearRuta(Municipio[] recorrido, double precio, String tipoVehiculo, String horaSalida, String horarioViaje, int cantidadAsientos) {
+        Ruta ruta = new Ruta(siguienteId++, recorrido, precio, tipoVehiculo, horaSalida, horarioViaje, cantidadAsientos);
         rutas.agregar(ruta);
         return ruta;
     }
