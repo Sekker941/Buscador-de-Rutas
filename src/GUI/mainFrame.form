@@ -680,7 +680,7 @@
                           <Component id="jLabel7" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jButton10" min="-2" pref="180" max="-2" attributes="0"/>
+                              <Component id="botonHistorial" min="-2" pref="180" max="-2" attributes="0"/>
                               <Component id="botonSalirHistorial2" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -699,7 +699,7 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jLabel7" min="-2" pref="110" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jButton10" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="botonHistorial" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="botonSalirHistorial2" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
@@ -1056,7 +1056,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton10">
+        <Component class="javax.swing.JButton" name="botonHistorial">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="e5" red="cc" type="rgb"/>
@@ -1073,7 +1073,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonHistorialActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonSalirHistorial2">
@@ -1351,7 +1351,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton12ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonHistorial"/>
           </Events>
         </Component>
       </SubComponents>
@@ -2440,7 +2440,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField27">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Costo Pasaje Tipo A, Tipo B"/>
+                <Property name="text" type="java.lang.String" value="Costo pasaje"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField27ActionPerformed"/>

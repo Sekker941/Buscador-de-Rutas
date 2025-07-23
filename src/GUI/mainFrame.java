@@ -88,7 +88,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jTextField17 = new javax.swing.JTextField();
         jComboBox4 = new javax.swing.JComboBox<>();
-        jButton10 = new javax.swing.JButton();
+        botonHistorial = new javax.swing.JButton();
         botonSalirHistorial2 = new javax.swing.JButton();
         ResultadosBusqueda = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
@@ -809,14 +809,14 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(32, 32, 32))))
         );
 
-        jButton10.setBackground(new java.awt.Color(204, 229, 255));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(0, 102, 255));
-        jButton10.setText("Historial de Viajes");
-        jButton10.setBorder(null);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        botonHistorial.setBackground(new java.awt.Color(204, 229, 255));
+        botonHistorial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonHistorial.setForeground(new java.awt.Color(0, 102, 255));
+        botonHistorial.setText("Historial de Viajes");
+        botonHistorial.setBorder(null);
+        botonHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                botonHistorialActionPerformed(evt);
             }
         });
 
@@ -842,7 +842,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(245, 245, 245)
                         .addGroup(InicioViajeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonSalirHistorial2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(InicioViajeroLayout.createSequentialGroup()
                         .addContainerGap(39, Short.MAX_VALUE)
@@ -855,7 +855,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(InicioViajeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(InicioViajeroLayout.createSequentialGroup()
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botonHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botonSalirHistorial2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(84, 84, 84)
@@ -945,7 +945,7 @@ public class mainFrame extends javax.swing.JFrame {
         jButton12.setBorder(null);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                botonHistorial(evt);
             }
         });
 
@@ -1510,7 +1510,7 @@ public class mainFrame extends javax.swing.JFrame {
 
         jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField27.setText("Costo Pasaje Tipo A, Tipo B");
+        jTextField27.setText("Costo pasaje");
         jTextField27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField27ActionPerformed(evt);
@@ -2339,12 +2339,15 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        
-        viajeroActual.getHistorial();
+    private void botonHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHistorialActionPerformed
+        try {
+            sistema.cargarHistorial(viajeroActual);
+        } catch (IOException ex) {
+            Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "Historial");
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_botonHistorialActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         CardLayout cl = (CardLayout) getContentPane().getLayout();
@@ -2360,6 +2363,7 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void botonInicioHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicioHistorialActionPerformed
+        
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "InicioViajero");
     }//GEN-LAST:event_botonInicioHistorialActionPerformed
@@ -2484,16 +2488,12 @@ public class mainFrame extends javax.swing.JFrame {
         cl.show(getContentPane(), "InicioViajero");
     }//GEN-LAST:event_botonInicioHistorial1ActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        
-        viajeroActual.getHistorial();
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "Historial");
-    }//GEN-LAST:event_jButton12ActionPerformed
-
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        
-        viajeroActual.getHistorial();
+        try {
+            sistema.cargarHistorial(viajeroActual);
+        } catch (IOException ex) {
+            Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "Historial");
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -2507,6 +2507,16 @@ public class mainFrame extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "InicioViajero");
     }//GEN-LAST:event_botonInicioHistorial2ActionPerformed
+
+    private void botonHistorial(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHistorial
+        try {
+            sistema.cargarHistorial(viajeroActual);
+        } catch (IOException ex) {
+            Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "Historial");
+    }//GEN-LAST:event_botonHistorial
 
     private void mostrarRutasEnPanel(ArregloDinamico<Ruta> rutas) {
         // 1) Define las columnas
@@ -2596,6 +2606,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel RegistroViajero;
     private javax.swing.JPanel ResultadosBusqueda;
     private javax.swing.JTextField apellidoR;
+    private javax.swing.JButton botonHistorial;
     private javax.swing.JButton botonInicioHistorial;
     private javax.swing.JButton botonInicioHistorial1;
     private javax.swing.JButton botonInicioHistorial2;
@@ -2620,7 +2631,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField correoLE;
     private javax.swing.JTextField correoR;
     private javax.swing.JTextField correoRE;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -2742,7 +2752,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
