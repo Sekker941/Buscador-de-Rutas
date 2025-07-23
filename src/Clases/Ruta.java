@@ -12,7 +12,7 @@ public class Ruta implements Comparable<Ruta> {
     private String horaSalida;     // Formato: "HH:mm"
     private int cantidadAsientos;
     private String horarioViaje;
-    private String fecha;          // Formato sugerido: "yyyy-MM-dd"
+    private String fecha;          // Formato: "yyyy-MM-dd"
 
 
     public Ruta(int id, Municipio[] recorrido, double precio, String tipoVehiculo, String horarioViaje, String horaSalida, int cantidadAsientos, String fecha) {
