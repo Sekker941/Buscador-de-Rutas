@@ -21,7 +21,8 @@ public class Empresa {
     }
     
     public Empresa(String correo, String contraseña) {
-        this("", "", correo, "", contraseña); // Llama al constructor completo
+        this.correo = correo;
+        this.contraseña = contraseña;
     }
 
     public String getCorreo() {
@@ -29,7 +30,7 @@ public class Empresa {
     }
 
     public boolean verificarCredenciales(String correo, String contraseña) {
-        return this.nombre.equals(correo) && this.contraseña.equals(contraseña);
+        return this.correo.equals(correo) && this.contraseña.equals(contraseña);
     }
 
     // Crea y agrega una nueva ruta, asignando ID automáticamente
@@ -74,7 +75,7 @@ public class Empresa {
     public static Empresa fromCSV(String linea) {
         String[] partes = linea.split(";");
         if (partes.length != 2) return null;
-        return new Empresa(partes[0].trim(), partes[1].trim());
+        return new Empresa(partes[0], partes[1]);
     }
 
     // Obtiene todas las rutas
