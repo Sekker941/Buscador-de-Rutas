@@ -54,7 +54,7 @@ public class SistemaRegistro {
         try (BufferedReader br = new BufferedReader(new FileReader(fileViajerosInfo))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] p = linea.split(",");
+                String[] p = linea.split(";");
                 if (p.length != 4) continue;
                 if (p[2].trim().equalsIgnoreCase(correo)) {
                     return new Viajero(p[0].trim(), p[1].trim(), p[2].trim(), p[3].trim());
@@ -76,7 +76,7 @@ public class SistemaRegistro {
             String linea;
             while ((linea = br.readLine()) != null) {
                 Viajero v = Viajero.fromCSV(linea);
-                if (v != null && v.getUsuario().equals(correo)) {
+                if (v != null && v.getCorreo().equals(correo)) {
                     return v;
                 }
             }
@@ -104,7 +104,7 @@ public class SistemaRegistro {
             return false;
         }
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileEmpresasInfo, true))) {
-            bw.write(nombre + "," + NIT + "," + correo + "," + telefono + "," + contraseña);
+            bw.write(nombre + ";" + NIT + ";" + correo + ";" + telefono + ";" + contraseña);
             bw.newLine();
         }
         return true;
@@ -114,7 +114,7 @@ public class SistemaRegistro {
         try (BufferedReader br = new BufferedReader(new FileReader(fileEmpresasInfo))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                String[] p = linea.split(",");
+                String[] p = linea.split(";");
                 if (p.length != 5) continue;  // línea malformada
                 if (p[2].trim().equalsIgnoreCase(correo)) {
                     return new Empresa(
@@ -148,5 +148,38 @@ public class SistemaRegistro {
             }
         }
         return null;
+    }
+    
+    private static String historialFilename(String correo) {
+        // limpia caracteres inválidos en nombre de archivo
+        String base = correo.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
+        return "historial_" + base + ".csv";
+    }
+    
+    public void guardarHistorial(Viajero v, Ruta r) throws IOException {
+        String fichero = historialFilename(v.getCorreo());
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fichero, true))) {
+            bw.write(r.toCSV());
+            bw.newLine();
+        }
+    }
+    
+    public ArregloDinamico<Ruta> cargarHistorial(Viajero v) throws IOException {
+        ArregloDinamico<Ruta> historico = new ArregloDinamico<>();
+        String fichero = historialFilename(v.getCorreo());
+        File f = new File(fichero);
+        if (!f.exists()) {
+            return historico;
+        }
+        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Ruta ruta = Ruta.fromCSV(linea);
+                if (ruta != null) {
+                    historico.agregar(ruta);
+                }
+            }
+        }
+        return historico;
     }
 }

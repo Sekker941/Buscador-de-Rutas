@@ -81,6 +81,42 @@ public class Ruta implements Comparable<Ruta> {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+    
+    public String toCSV() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(id).append(";")
+          .append(precio).append(";")
+          .append(tipoVehiculo).append(";")
+          .append(horarioViaje).append(";")
+          .append(horaSalida).append(";")
+          .append(cantidadAsientos).append(";")
+          .append(fecha).append(";");
+
+        for (int i = 0; i < recorrido.length; i++) {
+            sb.append(recorrido[i].getNombre());
+            if (i < recorrido.length - 1) sb.append("|");
+        }
+        return sb.toString();
+    }
+    
+    public static Ruta fromCSV(String linea) {
+        // limit 8 para no rebanar nombres de municipios
+        String[] p = linea.split(";", 8);
+        if (p.length != 8) return null;
+        int id = Integer.parseInt(p[0]);
+        double precio = Double.parseDouble(p[1]);
+        String tipo = p[2];
+        String horarioViaje = p[3];
+        String horaSalida = p[4];
+        int asientos = Integer.parseInt(p[5]);
+        String fecha = p[6];
+        String[] muniNombres = p[7].split("\\|");
+        Municipio[] rec = new Municipio[muniNombres.length];
+        for (int i = 0; i < muniNombres.length; i++) {
+            rec[i] = new Municipio(muniNombres[i]);
+        }
+        return new Ruta(id, rec, precio, tipo, horarioViaje, horaSalida, asientos, fecha);
+    }
 
     @Override
     public int compareTo(Ruta otra) {
