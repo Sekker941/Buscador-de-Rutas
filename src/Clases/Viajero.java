@@ -2,10 +2,20 @@
 package Clases;
 
 public class Viajero {
+    private String nombre;
+    private String apellido;
     private String correo;
     private String contraseña;
     private ArregloDinamico<Ruta> historial;
 
+    public Viajero(String nombre, String apellido, String correo, String contraseña) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contraseña = contraseña;
+        this.historial = new ArregloDinamico<>();
+    }
+    
     public Viajero(String correo, String contraseña) {
         this.correo = correo;
         this.contraseña = contraseña;

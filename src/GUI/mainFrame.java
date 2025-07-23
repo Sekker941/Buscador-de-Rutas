@@ -65,13 +65,10 @@ public class mainFrame extends javax.swing.JFrame {
         botonLoginE = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
         nitE = new javax.swing.JTextField();
         nombreE = new javax.swing.JTextField();
         telefonoE = new javax.swing.JTextField();
         botonRegistroE = new javax.swing.JButton();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
         correoRE = new javax.swing.JTextField();
         contraseñaRE = new javax.swing.JTextField();
         InicioViajero = new javax.swing.JPanel();
@@ -524,13 +521,6 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Registro");
 
-        jTextField9.setText("Razón Social");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-
         nitE.setText("NIT");
         nitE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -562,20 +552,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField13.setText("Dirección Principal Física de Oficinas");
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
-            }
-        });
-
-        jTextField14.setText("Sitio Web");
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
-            }
-        });
-
         correoRE.setText("Correo Electrónico");
         correoRE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -600,15 +576,12 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(botonRegistroE, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField14)
-                        .addComponent(correoRE)
-                        .addComponent(contraseñaRE, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(correoRE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                        .addComponent(contraseñaRE, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(nitE)
                         .addComponent(nombreE)
-                        .addComponent(telefonoE, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(telefonoE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
                 .addGap(186, 186, 186))
         );
         jPanel9Layout.setVerticalGroup(
@@ -616,25 +589,19 @@ public class mainFrame extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(100, 100, 100)
                 .addComponent(nitE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(nombreE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(telefonoE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(correoRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(contraseñaRE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addComponent(botonRegistroE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout RegistroEmpresaLayout = new javax.swing.GroupLayout(RegistroEmpresa);
@@ -2251,7 +2218,7 @@ public class mainFrame extends javax.swing.JFrame {
         String contraseña = contraseñaL.getText();
         try {
             if (sistema.loginViajero(correo, contraseña)){
-                viajeroActual = new Viajero(correo, contraseña);
+                viajeroActual = sistema.buscarViajeroInfo(correo);
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
                 cl.show(getContentPane(), "InicioViajero");
             }
@@ -2264,11 +2231,14 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botonLoginActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+        String nombre = nombreR.getText();
+        String apellido = apellidoR.getText();
         String correo = correoR.getText();
         String contraseña = contraseñaR.getText();
         try {
             if (sistema.registrarViajero(correo, contraseña)){
-                viajeroActual = new Viajero(correo, contraseña);
+                sistema.registrarViajeroInfo(nombre, apellido, correo, contraseña);
+                viajeroActual = new Viajero(nombre, apellido, correo, contraseña);
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
                 cl.show(getContentPane(), "InicioViajero");
             }
@@ -2294,6 +2264,7 @@ public class mainFrame extends javax.swing.JFrame {
 
         try {
             if (sistema.loginEmpresa(correo, contraseña)){
+                empresaActual = sistema.buscarEmpresaInfo(correo);
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
                 cl.show(getContentPane(), "InicioEmpresa");
             }
@@ -2304,10 +2275,6 @@ public class mainFrame extends javax.swing.JFrame {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_botonLoginEActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void nitEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nitEActionPerformed
         // TODO add your handling code here:
@@ -2329,7 +2296,9 @@ public class mainFrame extends javax.swing.JFrame {
         String contraseña = contraseñaRE.getText();
 
         try {
-            if(sistema.registrarEmpresa(nombre, nit, correo, telefono, contraseña)){
+            if(sistema.registrarEmpresa(correo, contraseña)){
+                sistema.registrarEmpresaInfo(nombre, nit, correo, telefono, contraseña);
+                empresaActual = new Empresa(nombre, nit, correo, telefono, contraseña);
                 CardLayout cl = (CardLayout) getContentPane().getLayout();
                 cl.show(getContentPane(), "InicioEmpresa");
             }
@@ -2345,14 +2314,6 @@ public class mainFrame extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "RegistroViajero");
     }//GEN-LAST:event_botonSoyViajeroActionPerformed
-
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
-
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
 
     private void correoREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoREActionPerformed
         // TODO add your handling code here:
@@ -2767,8 +2728,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField20;
@@ -2783,7 +2742,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextField32;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
