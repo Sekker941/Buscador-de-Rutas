@@ -240,6 +240,25 @@ public class SistemaRegistro {
         return null;
     }
     
+    public Ruta buscarRutaGlobalPorId(int id) throws IOException {
+        if (!fileRutasGlobal.exists()) return null;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileRutasGlobal))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(";", 2); // formato: correo;rutaCSV
+                if (partes.length != 2) continue;
+
+                Ruta r = Ruta.fromCSV(partes[1]);
+                if (r != null && r.getId() == id) {
+                    return r;
+                }
+            }
+        }
+
+        return null;
+    }
+    
     public boolean modificarRutaEmpresaPorId(Empresa e, int id, double nuevoPrecio, String nuevoTipoVehiculo, String nuevoHorarioViaje, String nuevaHoraSalida, String nuevaFecha ) throws IOException {
         String fichero = rutasFilename(e.getCorreo());
         File file = new File(fichero);
@@ -400,5 +419,28 @@ public class SistemaRegistro {
         }
 
         return true;
+    }
+    
+    public ArregloDinamico<Ruta> cargarRutasGlobales() throws IOException {
+        ArregloDinamico<Ruta> rutas = new ArregloDinamico<>();
+
+        if (!fileRutasGlobal.exists()) {
+            return rutas;
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileRutasGlobal))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(";", 2); // separamos correo del resto
+                if (partes.length != 2) continue;
+
+                Ruta ruta = Ruta.fromCSV(partes[1]); // usamos solo la parte de la ruta
+                if (ruta != null) {
+                    rutas.agregar(ruta);
+                }
+            }
+        }
+
+        return rutas;
     }
 }
