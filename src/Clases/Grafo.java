@@ -207,4 +207,9 @@ public class Grafo {
             System.out.println();
         }
     }
+
+    public Municipio[] getMunicipios() {
+        return municipios;
+    }
+    
 }

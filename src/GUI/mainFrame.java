@@ -44,59 +44,36 @@ public class mainFrame extends javax.swing.JFrame {
         mapa.agregarMunicipio("Quimbaya");
         mapa.agregarMunicipio("Salento");
         
-        mapa.agregarArista("Armenia", "Calarca", 1, rootPaneCheckingEnabled);
-        mapa.agregarArista("Armenia", "Salento", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Armenia", "Circasia", 4, rootPaneCheckingEnabled);
-        mapa.agregarArista("Armenia", "Montenegro", 4, rootPaneCheckingEnabled);
-        mapa.agregarArista("Armenia", "La Tebaida", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Armenia", "Calarca", 1, true);
+        mapa.agregarArista("Armenia", "Salento", 5, true);
+        mapa.agregarArista("Armenia", "Circasia", 4, true);
+        mapa.agregarArista("Armenia", "Montenegro", 4, true);
+        mapa.agregarArista("Armenia", "La Tebaida", 4, true);
         
-        mapa.agregarArista("Buenavista", "Pijao", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("Buenavista", "Cordoba", 2, rootPaneCheckingEnabled);
-        mapa.agregarArista("Buenavista", "Calarca", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Buenavista", "Pijao", 3, true);
+        mapa.agregarArista("Buenavista", "Cordoba", 2, true);
+        mapa.agregarArista("Buenavista", "Calarca", 5, true);
         
-        mapa.agregarArista("Calarca", "Cordoba", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("Calarca", "Buenavista", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Calarca", "La Tebaida", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Calarca", "Armenia", 1, rootPaneCheckingEnabled);
-        mapa.agregarArista("Calarca", "Salento", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Calarca", "Cordoba", 3, true);
+        mapa.agregarArista("Calarca", "La Tebaida", 5, true);
+        mapa.agregarArista("Calarca", "Salento", 5, true);
         
-        mapa.agregarArista("Circasia", "Salento", 2, rootPaneCheckingEnabled);
-        mapa.agregarArista("Circasia", "Filandia", 1, rootPaneCheckingEnabled);
-        mapa.agregarArista("Circasia", "Quimbaya", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Circasia", "Montenegro", 6, rootPaneCheckingEnabled);
-        mapa.agregarArista("Circasia", "Armenia", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Circasia", "Salento", 2, true);
+        mapa.agregarArista("Circasia", "Filandia", 1, true);
+        mapa.agregarArista("Circasia", "Quimbaya", 5, true);
+        mapa.agregarArista("Circasia", "Montenegro", 6, true);
         
-        mapa.agregarArista("Cordoba", "Pijao", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("Cordoba", "Buenavista", 2, rootPaneCheckingEnabled);
-        mapa.agregarArista("Cordoba", "Calarca", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Cordoba", "Pijao", 3, true);
         
-        mapa.agregarArista("Filandia", "Quimbaya", 4, rootPaneCheckingEnabled);
-        mapa.agregarArista("Filandia", "Circasia", 1, rootPaneCheckingEnabled);
-        mapa.agregarArista("Filandia", "Salento", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Filandia", "Quimbaya", 4, true);
+        mapa.agregarArista("Filandia", "Salento", 4, true);
         
-        mapa.agregarArista("Genova", "Pijao", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Genova", "Pijao", 5, true);
         
-        mapa.agregarArista("La Tebaida", "Montenegro", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("La Tebaida", "Armenia", 4, rootPaneCheckingEnabled);
-        mapa.agregarArista("La Tebaida", "Calarca", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("La Tebaida", "Montenegro", 3, true);
         
-        mapa.agregarArista("Montenegro", "La Tebaida", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("Montenegro", "Armenia", 4, rootPaneCheckingEnabled);
-        mapa.agregarArista("Montenegro", "Circasia", 6, rootPaneCheckingEnabled);
-        mapa.agregarArista("Montenegro", "Quimbaya", 3, rootPaneCheckingEnabled);
-        
-        mapa.agregarArista("Pijao", "Genova", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Pijao", "Buenavista", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("Pijao", "Cordoba", 3, rootPaneCheckingEnabled);
-        
-        mapa.agregarArista("Quimbaya", "Montenegro", 3, rootPaneCheckingEnabled);
-        mapa.agregarArista("Quimbaya", "Circasia", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Quimbaya", "Filandia", 4, rootPaneCheckingEnabled);
-        
-        mapa.agregarArista("Salento", "Calarca", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Salento", "Armenia", 5, rootPaneCheckingEnabled);
-        mapa.agregarArista("Salento", "Circasia", 2, rootPaneCheckingEnabled);
-        mapa.agregarArista("Salento", "Filandia", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Montenegro", "Quimbaya", 3, true);
+
         initComponents();
     }
 
@@ -146,8 +123,8 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        origenB = new javax.swing.JComboBox<>();
+        destinoB = new javax.swing.JComboBox<>();
         jButton7 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -721,14 +698,40 @@ public class mainFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 229, 255));
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        origenB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        origenB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
+            "Armenia",
+            "Buenavista",
+            "Calarca",
+            "Circasia",
+            "Cordoba",
+            "Filandia",
+            "Genova",
+            "La Tebaida",
+            "Montenegro",
+            "Pijao",
+            "Quimbaya",
+            "Salento"
+        }));
 
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        destinoB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        destinoB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
+            "Armenia",
+            "Buenavista",
+            "Calarca",
+            "Circasia",
+            "Cordoba",
+            "Filandia",
+            "Genova",
+            "La Tebaida",
+            "Montenegro",
+            "Pijao",
+            "Quimbaya",
+            "Salento"
+        }));
+        destinoB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                destinoBActionPerformed(evt);
             }
         });
 
@@ -814,11 +817,11 @@ public class mainFrame extends javax.swing.JFrame {
                                         .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(origenB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(destinoB, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -857,8 +860,8 @@ public class mainFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(destinoB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(origenB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1554,9 +1557,35 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        seleccionOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Origen", "Item 2", "Item 3", "Item 4" }));
+        seleccionOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
+            "Armenia",
+            "Buenavista",
+            "Calarca",
+            "Circasia",
+            "Cordoba",
+            "Filandia",
+            "Genova",
+            "La Tebaida",
+            "Montenegro",
+            "Pijao",
+            "Quimbaya",
+            "Salento"
+        }));
 
-        seleccionDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
+        seleccionDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
+            "Armenia",
+            "Buenavista",
+            "Calarca",
+            "Circasia",
+            "Cordoba",
+            "Filandia",
+            "Genova",
+            "La Tebaida",
+            "Montenegro",
+            "Pijao",
+            "Quimbaya",
+            "Salento"
+        }));
         seleccionDestino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 seleccionDestinoActionPerformed(evt);
@@ -1814,7 +1843,7 @@ public class mainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
         );
@@ -2387,9 +2416,9 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void destinoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_destinoBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_destinoBActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
@@ -2750,6 +2779,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField correoPE;
     private javax.swing.JTextField correoR;
     private javax.swing.JTextField correoRE;
+    private javax.swing.JComboBox<String> destinoB;
     private javax.swing.JTextField fechaRuta;
     private javax.swing.JTextField fechaRutaM;
     private javax.swing.JTextField horaRuta;
@@ -2766,9 +2796,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
@@ -2862,6 +2890,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nombreE;
     private javax.swing.JTextField nombrePE;
     private javax.swing.JTextField nombreR;
+    private javax.swing.JComboBox<String> origenB;
     private javax.swing.JPanel panelHistorial;
     private javax.swing.JTextField precioRuta;
     private javax.swing.JTextField precioRutaM;
