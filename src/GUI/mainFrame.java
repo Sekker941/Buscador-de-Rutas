@@ -34,6 +34,7 @@ public class mainFrame extends javax.swing.JFrame {
         this.viajeroActual = null;
         this.empresaActual = null;
         this.mapa = new Grafo(12);
+        this.rutas = sistema.cargarRutasGlobales();
         mapa.agregarMunicipio("Armenia");
         mapa.agregarMunicipio("Buenavista");
         mapa.agregarMunicipio("Calarca");
@@ -147,7 +148,7 @@ public class mainFrame extends javax.swing.JFrame {
         panelResultados = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         seleccionRB = new javax.swing.JComboBox<>();
-        jButton8 = new javax.swing.JButton();
+        botonD = new javax.swing.JButton();
         botonSalirHistorial1 = new javax.swing.JButton();
         botonInicioHistorial2 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
@@ -159,13 +160,12 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        origenD = new javax.swing.JLabel();
+        horaFechaD = new javax.swing.JLabel();
+        vehiculoD = new javax.swing.JLabel();
+        precioD = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel(icono);
         jPanel6 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
@@ -190,8 +190,6 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         panelHistorial = new javax.swing.JPanel();
         InicioEmpresa = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jButton22 = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
@@ -293,7 +291,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 72)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Hola!");
+        jLabel1.setText("Buen dia!");
         jLabel1.setToolTipText("");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -686,7 +684,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 54)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 102, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("          Bienvenido/a, Alejandro!");
+        jLabel7.setText("          Bienvenido/a");
         jLabel7.setToolTipText("");
         jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -899,7 +897,7 @@ public class mainFrame extends javax.swing.JFrame {
                             .addComponent(botonHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonSalirHistorial2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(InicioViajeroLayout.createSequentialGroup()
-                        .addContainerGap(35, Short.MAX_VALUE)
+                        .addContainerGap(36, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39))
         );
@@ -926,7 +924,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 102, 255));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setText("  Alejandro, encontramos estas rutas:");
+        jLabel27.setText(" Encontramos estas rutas:");
         jLabel27.setToolTipText("");
         jLabel27.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -961,13 +959,13 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(0, 102, 255));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("OK");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        botonD.setBackground(new java.awt.Color(0, 102, 255));
+        botonD.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonD.setForeground(new java.awt.Color(255, 255, 255));
+        botonD.setText("OK");
+        botonD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                botonDActionPerformed(evt);
             }
         });
 
@@ -1024,7 +1022,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(89, 89, 89)
                         .addGroup(ResultadosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(seleccionRB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(botonD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(ResultadosBusquedaLayout.createSequentialGroup()
                         .addGap(245, 245, 245)
                         .addGroup(ResultadosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1055,7 +1053,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(seleccionRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
+                        .addComponent(botonD)
                         .addGap(438, 438, 438))
                     .addGroup(ResultadosBusquedaLayout.createSequentialGroup()
                         .addComponent(panelResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1110,17 +1108,17 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("Asientos: ");
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel20.setText("Terminal Salitre, Bogotá, Bogotá D.C");
+        origenD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        origenD.setText("Terminal Salitre, Bogotá, Bogotá D.C");
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel22.setText("06:45 AM - 01/12/2001");
+        horaFechaD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        horaFechaD.setText("06:45 AM - 01/12/2001");
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel23.setText("DuoBus de Lujo");
+        vehiculoD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        vehiculoD.setText("DuoBus de Lujo");
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel24.setText("Tipo A: $50.000 - Tipo B: $40.000 - Tipo C: $35.000");
+        precioD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        precioD.setText("Tipo A: $50.000 - Tipo B: $40.000 - Tipo C: $35.000");
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1129,24 +1127,15 @@ public class mainFrame extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 229, 255));
 
-        jLabel26.setText("INFORMACION DE LA EMPRESA, (TEL, WEB, NIT...");
-        jLabel26.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
         jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1257,19 +1246,19 @@ public class mainFrame extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(precioD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(vehiculoD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(horaFechaD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(origenD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1335,19 +1324,19 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DetallesRutaLayout.createSequentialGroup()
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(origenD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(horaFechaD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vehiculoD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(precioD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1403,7 +1392,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel38.setText("  Este es tu Historial de Viajes, Alejandro:");
+        jLabel38.setText("  Este es tu Historial de Viajes:");
         jLabel38.setToolTipText("");
         jLabel38.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -1489,31 +1478,6 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().add(Historial, "Historial");
 
         InicioEmpresa.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel10.setBackground(new java.awt.Color(0, 102, 255));
-
-        jButton22.setBackground(new java.awt.Color(0, 102, 255));
-        jButton22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton22.setForeground(new java.awt.Color(255, 255, 255));
-        jButton22.setText("Modificar Asientos Disponibles");
-        jButton22.setBorder(null);
-        jButton22.setBorderPainted(false);
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-        );
 
         jLabel41.setBackground(new java.awt.Color(255, 255, 255));
         jLabel41.setFont(new java.awt.Font("Segoe UI", 1, 72)); // NOI18N
@@ -1705,7 +1669,7 @@ public class mainFrame extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel43, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(198, Short.MAX_VALUE)
+                .addContainerGap(197, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(botonEliminarRuta)
@@ -1797,12 +1761,10 @@ public class mainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
-                .addGap(146, 146, 146)
+            .addGroup(InicioEmpresaLayout.createSequentialGroup()
+                .addGap(434, 434, 434)
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         InicioEmpresaLayout.setVerticalGroup(
             InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1819,9 +1781,7 @@ public class mainFrame extends javax.swing.JFrame {
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(InicioEmpresa, "InicioEmpresa");
@@ -2372,27 +2332,27 @@ public class mainFrame extends javax.swing.JFrame {
     private void buscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBActionPerformed
         String origen = (String) origenB.getSelectedItem();
         String destino = (String) destinoB.getSelectedItem();
-        mapa.buscarRutasCoincidentes(origen, destino, rutas);
+        rutasActual = mapa.buscarRutasCoincidentes(origen, destino, rutas);
         String vehiculo = (String) vehiculoB.getSelectedItem();
         String fecha = fechaB.getText();
-        rutasActual = mapa.filtrarPorTipoVehiculo(rutas, vehiculo);
-        rutasActual = mapa.filtrarPorFecha(rutas, fecha);
+        //rutasActual = mapa.filtrarPorTipoVehiculo(rutasActual, vehiculo);
+        //rutasActual = mapa.filtrarPorFecha(rutasActual, fecha);
         if (precioB.isSelected()){
-            rutasActual = mapa.filtrarPorPrecio(rutas);
+            //rutasActual = mapa.filtrarPorPrecio(rutasActual);
         }
         if (diurnoB.isSelected()){
-            rutasActual = mapa.filtrarPorHorario(rutas, "Diurno");
+            //rutasActual = mapa.filtrarPorHorario(rutasActual, "Diurno");
         }
         if (nocturnoB.isSelected()){
-            rutasActual = mapa.filtrarPorHorario(rutas, "Nocturno");
+            //rutasActual = mapa.filtrarPorHorario(rutasActual, "Nocturno");
         }
-        mostrarRutasEnPanel(rutasActual, panelResultados);
         String[] seleccion = etiquetasDeRutas(rutasActual);
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        mostrarRutasEnPanel(rutasActual, panelResultados);
         seleccionRB.removeAllItems();
         for (String opcion: seleccion){
             seleccionRB.addItem(opcion);
         }
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "ResultadosBusqueda");
     }//GEN-LAST:event_buscarBActionPerformed
 
@@ -2411,12 +2371,12 @@ public class mainFrame extends javax.swing.JFrame {
     private void botonHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHistorialActionPerformed
         try {
             sistema.cargarHistorial(viajeroActual);
+            CardLayout cl = (CardLayout) getContentPane().getLayout();
             mostrarRutasEnPanel(sistema.cargarHistorial(viajeroActual), panelHistorial);
+            cl.show(getContentPane(), "Historial");
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "Historial");
     }//GEN-LAST:event_botonHistorialActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -2424,9 +2384,17 @@ public class mainFrame extends javax.swing.JFrame {
         cl.show(getContentPane(), "ResultadosBusqueda");
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void botonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDActionPerformed
+        String seleccionado = (String) destinoB.getSelectedItem();
+        int id = Integer.parseInt(seleccionado);
+        try {
+            rutaActual = sistema.buscarRutaGlobalPorId(id);
+        } catch (IOException ex) {
+            Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "DetallesRuta");
+    }//GEN-LAST:event_botonDActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
@@ -2500,11 +2468,6 @@ public class mainFrame extends javax.swing.JFrame {
     private void precioRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioRutaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_precioRutaActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "ActualizarAsientos");
-    }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         CardLayout cl = (CardLayout) getContentPane().getLayout();
@@ -2580,11 +2543,12 @@ public class mainFrame extends javax.swing.JFrame {
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         try {
             sistema.cargarHistorial(viajeroActual);
+            CardLayout cl = (CardLayout) getContentPane().getLayout();
+            mostrarRutasEnPanel(sistema.cargarHistorial(viajeroActual), panelHistorial);
+            cl.show(getContentPane(), "Historial");
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "Historial");
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void botonSalirHistorial5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirHistorial5ActionPerformed
@@ -2600,11 +2564,12 @@ public class mainFrame extends javax.swing.JFrame {
     private void botonHistorial(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHistorial
         try {
             sistema.cargarHistorial(viajeroActual);
+            CardLayout cl = (CardLayout) getContentPane().getLayout();
+            mostrarRutasEnPanel(sistema.cargarHistorial(viajeroActual), panelHistorial);
+            cl.show(getContentPane(), "Historial");
         } catch (IOException ex) {
             Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "Historial");
     }//GEN-LAST:event_botonHistorial
 
     private void seleccionTipoHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionTipoHorarioActionPerformed
@@ -2695,7 +2660,7 @@ public class mainFrame extends javax.swing.JFrame {
         int n = rutas.size();
         String[] etiquetas = new String[n];
         for (int i = 0; i < n; i++) {
-            etiquetas[i] = "ruta" + (i + 1) + " " + i;
+            etiquetas[i] = String.valueOf(i);
         }
         return etiquetas;
     }
@@ -2749,6 +2714,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField apellidoR;
     private javax.swing.JComboBox<String> boletosB;
     private javax.swing.JButton botonBuscarId;
+    private javax.swing.JButton botonD;
     private javax.swing.JButton botonEliminarRuta;
     private javax.swing.JButton botonHistorial;
     private javax.swing.JButton botonInicioHistorial;
@@ -2784,6 +2750,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField fechaB;
     private javax.swing.JTextField fechaRuta;
     private javax.swing.JTextField fechaRutaM;
+    private javax.swing.JLabel horaFechaD;
     private javax.swing.JTextField horaRuta;
     private javax.swing.JTextField horaRutaM;
     private javax.swing.JTextField idRutaM;
@@ -2791,12 +2758,10 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox5;
@@ -2815,12 +2780,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -2855,7 +2815,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -2884,9 +2843,11 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePE;
     private javax.swing.JTextField nombreR;
     private javax.swing.JComboBox<String> origenB;
+    private javax.swing.JLabel origenD;
     private javax.swing.JPanel panelHistorial;
     private javax.swing.JPanel panelResultados;
     private javax.swing.JToggleButton precioB;
+    private javax.swing.JLabel precioD;
     private javax.swing.JTextField precioRuta;
     private javax.swing.JTextField precioRutaM;
     private javax.swing.JComboBox<String> seleccionDestino;
@@ -2899,5 +2860,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField telefonoE;
     private javax.swing.JTextField telefonoPE;
     private javax.swing.JComboBox<String> vehiculoB;
+    private javax.swing.JLabel vehiculoD;
     // End of variables declaration//GEN-END:variables
 }
