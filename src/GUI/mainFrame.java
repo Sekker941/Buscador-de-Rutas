@@ -30,7 +30,73 @@ public class mainFrame extends javax.swing.JFrame {
         this.sistema = new SistemaRegistro();
         this.viajeroActual = null;
         this.empresaActual = null;
-        this.mapa = null;
+        this.mapa = new Grafo(12);
+        mapa.agregarMunicipio("Armenia");
+        mapa.agregarMunicipio("Buenavista");
+        mapa.agregarMunicipio("Calarca");
+        mapa.agregarMunicipio("Circasia");
+        mapa.agregarMunicipio("Cordoba");
+        mapa.agregarMunicipio("Filandia");
+        mapa.agregarMunicipio("Genova");
+        mapa.agregarMunicipio("La Tebaida");
+        mapa.agregarMunicipio("Montenegro");
+        mapa.agregarMunicipio("Pijao");
+        mapa.agregarMunicipio("Quimbaya");
+        mapa.agregarMunicipio("Salento");
+        
+        mapa.agregarArista("Armenia", "Calarca", 1, rootPaneCheckingEnabled);
+        mapa.agregarArista("Armenia", "Salento", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Armenia", "Circasia", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Armenia", "Montenegro", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Armenia", "La Tebaida", 4, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Buenavista", "Pijao", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Buenavista", "Cordoba", 2, rootPaneCheckingEnabled);
+        mapa.agregarArista("Buenavista", "Calarca", 5, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Calarca", "Cordoba", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Calarca", "Buenavista", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Calarca", "La Tebaida", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Calarca", "Armenia", 1, rootPaneCheckingEnabled);
+        mapa.agregarArista("Calarca", "Salento", 5, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Circasia", "Salento", 2, rootPaneCheckingEnabled);
+        mapa.agregarArista("Circasia", "Filandia", 1, rootPaneCheckingEnabled);
+        mapa.agregarArista("Circasia", "Quimbaya", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Circasia", "Montenegro", 6, rootPaneCheckingEnabled);
+        mapa.agregarArista("Circasia", "Armenia", 4, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Cordoba", "Pijao", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Cordoba", "Buenavista", 2, rootPaneCheckingEnabled);
+        mapa.agregarArista("Cordoba", "Calarca", 3, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Filandia", "Quimbaya", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Filandia", "Circasia", 1, rootPaneCheckingEnabled);
+        mapa.agregarArista("Filandia", "Salento", 4, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Genova", "Pijao", 5, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("La Tebaida", "Montenegro", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("La Tebaida", "Armenia", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("La Tebaida", "Calarca", 5, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Montenegro", "La Tebaida", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Montenegro", "Armenia", 4, rootPaneCheckingEnabled);
+        mapa.agregarArista("Montenegro", "Circasia", 6, rootPaneCheckingEnabled);
+        mapa.agregarArista("Montenegro", "Quimbaya", 3, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Pijao", "Genova", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Pijao", "Buenavista", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Pijao", "Cordoba", 3, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Quimbaya", "Montenegro", 3, rootPaneCheckingEnabled);
+        mapa.agregarArista("Quimbaya", "Circasia", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Quimbaya", "Filandia", 4, rootPaneCheckingEnabled);
+        
+        mapa.agregarArista("Salento", "Calarca", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Salento", "Armenia", 5, rootPaneCheckingEnabled);
+        mapa.agregarArista("Salento", "Circasia", 2, rootPaneCheckingEnabled);
+        mapa.agregarArista("Salento", "Filandia", 4, rootPaneCheckingEnabled);
         initComponents();
     }
 
