@@ -113,9 +113,23 @@ public class Grafo {
         return ruta;
     }
     
+    public ArregloDinamico<Ruta> filtrarPorFecha(ArregloDinamico<Ruta> rutas, String fechaDeseada) {
+        ArregloDinamico<Ruta> filtradas = new ArregloDinamico<>();
+
+        for (int i = 0; i < rutas.size(); i++) {
+            Ruta actual = rutas.obtener(i);
+            if (actual.getFecha().equals(fechaDeseada)) {
+                filtradas.agregar(actual);
+            }
+        }
+
+        return filtradas;
+    }
+    
     //Comprobador de rutas
-    public ArregloDinamico<Ruta> buscarRutasCoincidentes(Municipio[] recorridoBuscado, ArregloDinamico<Ruta> rutas) {
+    public ArregloDinamico<Ruta> buscarRutasCoincidentes(String origenNombre, String destinoNombre, ArregloDinamico<Ruta> rutas) {
         ArregloDinamico<Ruta> coincidentes = new ArregloDinamico<>();
+        Municipio[] recorridoBuscado = rutaMasCorta(origenNombre, destinoNombre);
 
         for (int i = 0; i < rutas.size(); i++) {
             Ruta actual = rutas.obtener(i);

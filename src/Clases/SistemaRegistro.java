@@ -8,6 +8,7 @@ public class SistemaRegistro {
     private final File fileEmpresas = new File("empresas.csv");
     private final File fileViajerosInfo = new File("viajeros_info.csv");
     private final File fileEmpresasInfo = new File("empresas_info.csv");
+    private final File fileRutasGlobal = new File("rutas_global.csv");
 
     public SistemaRegistro() throws IOException {
         // Crea archivos si no existen
@@ -22,6 +23,9 @@ public class SistemaRegistro {
         }
         if (!fileEmpresasInfo.exists()){
             fileEmpresasInfo.createNewFile();
+        }
+        if (!fileRutasGlobal.exists()) {
+            fileRutasGlobal.createNewFile();
         }
     }
 
@@ -194,6 +198,11 @@ public class SistemaRegistro {
             bw.write(r.toCSV());
             bw.newLine();
         }
+        try (BufferedWriter bwg = new BufferedWriter(new FileWriter(fileRutasGlobal, true))) {
+            // prefijo para identificar empresa: correo; luego el resto de toCSV()
+            bwg.write(e.getCorreo() + ";" + r.toCSV());
+            bwg.newLine();
+        }
     }
     
     public ArregloDinamico<Ruta> cargarRutasEmpresa(Empresa e) throws IOException {
@@ -275,6 +284,52 @@ public class SistemaRegistro {
                 bw.write(todasLineas.obtener(i));
                 bw.newLine();
             }
+            modificarRutaGlobalPorId(e, id, nuevoPrecio,nuevoTipoVehiculo, nuevoHorarioViaje, nuevaHoraSalida, nuevaFecha);
+        }
+
+        return true;
+    }
+    
+    public boolean modificarRutaGlobalPorId(Empresa e, int id, double nuevoPrecio, String nuevoTipoVehiculo, String nuevoHorarioViaje, String nuevaHoraSalida, String nuevaFecha) throws IOException {
+        // Leemos todo en un ArregloDinamico<String>
+        ArregloDinamico<String> lineas = new ArregloDinamico<>();
+        boolean modificado = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileRutasGlobal))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                // formato: correo;id,precio,...
+                String[] partes = linea.split(";", 2);
+                if (partes.length < 2) {
+                    lineas.agregar(linea);
+                    continue;
+                }
+                String correo = partes[0];
+                Ruta r = Ruta.fromCSV(partes[1]);
+                if (correo.equals(e.getCorreo()) && r != null && r.getId() == id) {
+                    // reconstruimos línea nueva
+                    Ruta rutaMod = new Ruta(
+                        r.getId(), r.getRecorrido(),
+                        nuevoPrecio, nuevoTipoVehiculo,
+                        nuevoHorarioViaje, nuevaHoraSalida,
+                        r.getCantidadAsientos(), nuevaFecha
+                    );
+                    lineas.agregar(correo + ";" + rutaMod.toCSV());
+                    modificado = true;
+                } else {
+                    lineas.agregar(linea);
+                }
+            }
+        }
+
+        if (!modificado) return false;
+
+        // Sobrescribimos
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileRutasGlobal, false))) {
+            for (int i = 0; i < lineas.size(); i++) {
+                bw.write(lineas.obtener(i));
+                bw.newLine();
+            }
         }
 
         return true;
@@ -299,6 +354,7 @@ public class SistemaRegistro {
                 bw.write(linea);
                 bw.newLine();
             }
+            eliminarRutaGlobalPorId(empresa, id);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -312,5 +368,37 @@ public class SistemaRegistro {
         }
 
         return eliminada;
-}
+    }
+    
+    public boolean eliminarRutaGlobalPorId(Empresa e, int id) throws IOException {
+        ArregloDinamico<String> lineas = new ArregloDinamico<>();
+        boolean eliminado = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileRutasGlobal))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = linea.split(";", 2);
+                if (partes.length == 2) {
+                    String correo = partes[0];
+                    Ruta r = Ruta.fromCSV(partes[1]);
+                    if (correo.equals(e.getCorreo()) && r != null && r.getId() == id) {
+                        eliminado = true;
+                        continue;  // omitimos esta línea
+                    }
+                }
+                lineas.agregar(linea);
+            }
+        }
+
+        if (!eliminado) return false;
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileRutasGlobal, false))) {
+            for (int i = 0; i < lineas.size(); i++) {
+                bw.write(lineas.obtener(i));
+                bw.newLine();
+            }
+        }
+
+        return true;
+    }
 }
