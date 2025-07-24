@@ -170,7 +170,6 @@ public class mainFrame extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         jButton30 = new javax.swing.JButton();
         botonSalirEmpresa = new javax.swing.JButton();
-        botonPerfilEmpresa = new javax.swing.JButton();
         PerfilEmpresas = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jButton26 = new javax.swing.JButton();
@@ -188,7 +187,6 @@ public class mainFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         botonSalirHistorial5 = new javax.swing.JButton();
-        botonSalirHistorial6 = new javax.swing.JButton();
         ActualizarAsientos = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jButton28 = new javax.swing.JButton();
@@ -1732,28 +1730,15 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        botonPerfilEmpresa.setBackground(new java.awt.Color(204, 229, 255));
-        botonPerfilEmpresa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botonPerfilEmpresa.setForeground(new java.awt.Color(0, 102, 255));
-        botonPerfilEmpresa.setText("Perfil");
-        botonPerfilEmpresa.setBorder(null);
-        botonPerfilEmpresa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonPerfilEmpresaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout InicioEmpresaLayout = new javax.swing.GroupLayout(InicioEmpresa);
         InicioEmpresa.setLayout(InicioEmpresaLayout);
         InicioEmpresaLayout.setHorizontalGroup(
             InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(192, 192, 192)
-                .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonSalirEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonPerfilEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                .addGap(185, 185, 185)
+                .addComponent(botonSalirEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
             .addGroup(InicioEmpresaLayout.createSequentialGroup()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1761,7 +1746,7 @@ public class mainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
         );
@@ -1769,14 +1754,13 @@ public class mainFrame extends javax.swing.JFrame {
             InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(InicioEmpresaLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(InicioEmpresaLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addComponent(botonSalirEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonPerfilEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1934,17 +1918,6 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        botonSalirHistorial6.setBackground(new java.awt.Color(204, 229, 255));
-        botonSalirHistorial6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        botonSalirHistorial6.setForeground(new java.awt.Color(0, 102, 255));
-        botonSalirHistorial6.setText("Inicio");
-        botonSalirHistorial6.setBorder(null);
-        botonSalirHistorial6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSalirHistorial6ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout PerfilEmpresasLayout = new javax.swing.GroupLayout(PerfilEmpresas);
         PerfilEmpresas.setLayout(PerfilEmpresasLayout);
         PerfilEmpresasLayout.setHorizontalGroup(
@@ -1956,9 +1929,7 @@ public class mainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PerfilEmpresasLayout.createSequentialGroup()
                 .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PerfilEmpresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonSalirHistorial5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonSalirHistorial6, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(botonSalirHistorial5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
             .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1970,9 +1941,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(PerfilEmpresasLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(botonSalirHistorial6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(40, 40, 40)
                         .addComponent(botonSalirHistorial5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2465,6 +2434,10 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        nombrePE.setText(empresaActual.getNombre());
+        nitPE.setText(empresaActual.getNIT());
+        correoPE.setText(empresaActual.getCorreo());
+        telefonoPE.setText(empresaActual.getTelefono());
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "PerfilEmpresas");
     }//GEN-LAST:event_jButton30ActionPerformed
@@ -2591,20 +2564,6 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idRutaMActionPerformed
 
-    private void botonPerfilEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPerfilEmpresaActionPerformed
-        nombrePE.setText(empresaActual.getNombre());
-        nitPE.setText(empresaActual.getNIT());
-        correoPE.setText(empresaActual.getCorreo());
-        telefonoPE.setText(empresaActual.getTelefono());
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "PerfilEmpresas");
-    }//GEN-LAST:event_botonPerfilEmpresaActionPerformed
-
-    private void botonSalirHistorial6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirHistorial6ActionPerformed
-        CardLayout cl = (CardLayout) getContentPane().getLayout();
-        cl.show(getContentPane(), "InicioEmpresa");
-    }//GEN-LAST:event_botonSalirHistorial6ActionPerformed
-
     private void mostrarRutasEnPanel(ArregloDinamico<Ruta> rutas) {
         // 1) Define las columnas
         String[] columnas = {
@@ -2702,7 +2661,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonLoginE;
     private javax.swing.JButton botonModificarRuta;
-    private javax.swing.JButton botonPerfilEmpresa;
     private javax.swing.JButton botonRegistraRuta;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonRegistroE;
@@ -2713,7 +2671,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton botonSalirHistorial3;
     private javax.swing.JButton botonSalirHistorial4;
     private javax.swing.JButton botonSalirHistorial5;
-    private javax.swing.JButton botonSalirHistorial6;
     private javax.swing.JButton botonSoyEmpresa;
     private javax.swing.JButton botonSoyViajero;
     private javax.swing.JTextField contraseñaL;
