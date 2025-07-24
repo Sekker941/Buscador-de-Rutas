@@ -147,7 +147,7 @@ public class mainFrame extends javax.swing.JFrame {
         panelResultados = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         seleccionRB = new javax.swing.JComboBox<>();
-        jButton8 = new javax.swing.JButton();
+        botonD = new javax.swing.JButton();
         botonSalirHistorial1 = new javax.swing.JButton();
         botonInicioHistorial2 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
@@ -159,13 +159,12 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        origenD = new javax.swing.JLabel();
+        horaFechaD = new javax.swing.JLabel();
+        vehiculoD = new javax.swing.JLabel();
+        precioD = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel(icono);
         jPanel6 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jLabel32 = new javax.swing.JLabel();
@@ -961,13 +960,13 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(0, 102, 255));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("OK");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        botonD.setBackground(new java.awt.Color(0, 102, 255));
+        botonD.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonD.setForeground(new java.awt.Color(255, 255, 255));
+        botonD.setText("OK");
+        botonD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                botonDActionPerformed(evt);
             }
         });
 
@@ -1024,7 +1023,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(89, 89, 89)
                         .addGroup(ResultadosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(seleccionRB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(botonD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(ResultadosBusquedaLayout.createSequentialGroup()
                         .addGap(245, 245, 245)
                         .addGroup(ResultadosBusquedaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1055,7 +1054,7 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(seleccionRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)
+                        .addComponent(botonD)
                         .addGap(438, 438, 438))
                     .addGroup(ResultadosBusquedaLayout.createSequentialGroup()
                         .addComponent(panelResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1110,17 +1109,17 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel19.setText("Asientos: ");
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel20.setText("Terminal Salitre, Bogotá, Bogotá D.C");
+        origenD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        origenD.setText("Terminal Salitre, Bogotá, Bogotá D.C");
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel22.setText("06:45 AM - 01/12/2001");
+        horaFechaD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        horaFechaD.setText("06:45 AM - 01/12/2001");
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel23.setText("DuoBus de Lujo");
+        vehiculoD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        vehiculoD.setText("DuoBus de Lujo");
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel24.setText("Tipo A: $50.000 - Tipo B: $40.000 - Tipo C: $35.000");
+        precioD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        precioD.setText("Tipo A: $50.000 - Tipo B: $40.000 - Tipo C: $35.000");
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1129,24 +1128,15 @@ public class mainFrame extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(204, 229, 255));
 
-        jLabel26.setText("INFORMACION DE LA EMPRESA, (TEL, WEB, NIT...");
-        jLabel26.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
         jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1257,19 +1247,19 @@ public class mainFrame extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(precioD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(vehiculoD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(horaFechaD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(origenD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(DetallesRutaLayout.createSequentialGroup()
                                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1335,19 +1325,19 @@ public class mainFrame extends javax.swing.JFrame {
                 .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DetallesRutaLayout.createSequentialGroup()
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(origenD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(horaFechaD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vehiculoD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(precioD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(DetallesRutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2424,9 +2414,11 @@ public class mainFrame extends javax.swing.JFrame {
         cl.show(getContentPane(), "ResultadosBusqueda");
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void botonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDActionPerformed
+        rutaActual = (Ruta) destinoB.getSelectedItem();
+        CardLayout cl = (CardLayout) getContentPane().getLayout();
+        cl.show(getContentPane(), "DetallesRuta");
+    }//GEN-LAST:event_botonDActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
@@ -2749,6 +2741,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField apellidoR;
     private javax.swing.JComboBox<String> boletosB;
     private javax.swing.JButton botonBuscarId;
+    private javax.swing.JButton botonD;
     private javax.swing.JButton botonEliminarRuta;
     private javax.swing.JButton botonHistorial;
     private javax.swing.JButton botonInicioHistorial;
@@ -2784,6 +2777,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField fechaB;
     private javax.swing.JTextField fechaRuta;
     private javax.swing.JTextField fechaRutaM;
+    private javax.swing.JLabel horaFechaD;
     private javax.swing.JTextField horaRuta;
     private javax.swing.JTextField horaRutaM;
     private javax.swing.JTextField idRutaM;
@@ -2796,7 +2790,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox5;
@@ -2815,12 +2808,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -2884,9 +2872,11 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nombrePE;
     private javax.swing.JTextField nombreR;
     private javax.swing.JComboBox<String> origenB;
+    private javax.swing.JLabel origenD;
     private javax.swing.JPanel panelHistorial;
     private javax.swing.JPanel panelResultados;
     private javax.swing.JToggleButton precioB;
+    private javax.swing.JLabel precioD;
     private javax.swing.JTextField precioRuta;
     private javax.swing.JTextField precioRutaM;
     private javax.swing.JComboBox<String> seleccionDestino;
@@ -2899,5 +2889,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField telefonoE;
     private javax.swing.JTextField telefonoPE;
     private javax.swing.JComboBox<String> vehiculoB;
+    private javax.swing.JLabel vehiculoD;
     // End of variables declaration//GEN-END:variables
 }
