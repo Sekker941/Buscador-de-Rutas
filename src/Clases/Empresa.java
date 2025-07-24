@@ -61,4 +61,17 @@ public class Empresa {
                 return 0;
         }
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNIT() {
+        return NIT;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+    
 }
