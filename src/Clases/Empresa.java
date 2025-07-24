@@ -52,9 +52,9 @@ public class Empresa {
     public int calcularAsientos(String tipo){
         switch(tipo){
             case "2 pisos":
-                return 100;
-            case "normal":
                 return 60;
+            case "normal":
+                return 40;
             case "aerovan":
                 return 20;
             default:

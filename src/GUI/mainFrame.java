@@ -15,6 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
 
 public class mainFrame extends javax.swing.JFrame {
 
@@ -23,6 +24,7 @@ public class mainFrame extends javax.swing.JFrame {
     private Empresa empresaActual;
     private Grafo mapa;
     private Ruta rutaActual;
+    ImageIcon icono = new ImageIcon("ruta/a/tu/imagen.png");
     
     public mainFrame() throws IOException {
         this.sistema = new SistemaRegistro();
@@ -116,7 +118,7 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel(icono);
         jPanel6 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -196,7 +198,7 @@ public class mainFrame extends javax.swing.JFrame {
         jButton29 = new javax.swing.JButton();
         jComboBox20 = new javax.swing.JComboBox<>();
         jPanel23 = new javax.swing.JPanel();
-        jLabel51 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel(icono);
         jPanel24 = new javax.swing.JPanel();
         jLabel52 = new javax.swing.JLabel();
         jTextField21 = new javax.swing.JTextField();

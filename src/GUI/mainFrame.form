@@ -1718,6 +1718,9 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel(icono)"/>
+          </AuxValues>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel6">
           <Properties>
@@ -3299,6 +3302,9 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="IMAGEN MAPA BUS"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel(icono)"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
