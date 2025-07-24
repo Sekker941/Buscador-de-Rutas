@@ -182,4 +182,135 @@ public class SistemaRegistro {
         }
         return historico;
     }
+    
+    private String rutasFilename(String correo) {
+        String base = correo.replaceAll("[^a-zA-Z0-9\\.\\-]", "_");
+        return "rutas_" + base + ".csv";
+    }
+    
+    public void guardarRutasEmpresa(Empresa e, Ruta r) throws IOException {
+        String fichero = rutasFilename(e.getCorreo());
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fichero, true))) {
+            bw.write(r.toCSV());
+            bw.newLine();
+        }
+    }
+    
+    public ArregloDinamico<Ruta> cargarRutasEmpresa(Empresa e) throws IOException {
+        ArregloDinamico<Ruta> lista = new ArregloDinamico<>();
+        String fichero = rutasFilename(e.getCorreo());
+        File f = new File(fichero);
+        if (!f.exists()) {
+            return lista;  // ninguna ruta registrada aún
+        }
+        try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Ruta ruta = Ruta.fromCSV(linea);
+                if (ruta != null) {
+                    lista.agregar(ruta);
+                }
+            }
+        }
+        return lista;
+    }
+    
+    public Ruta buscarRutaEmpresaPorId(Empresa e, int id) throws IOException {
+        String fichero = rutasFilename(e.getCorreo());
+        File file = new File(fichero);
+        if (!file.exists()) return null;
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Ruta r = Ruta.fromCSV(linea);
+                if (r != null && r.getId() == id) {
+                    return r;
+                }
+            }
+        }
+        return null;
+    }
+    
+    public boolean modificarRutaEmpresaPorId(Empresa e, int id, double nuevoPrecio, String nuevoTipoVehiculo, String nuevoHorarioViaje, String nuevaHoraSalida, String nuevaFecha ) throws IOException {
+        String fichero = rutasFilename(e.getCorreo());
+        File file = new File(fichero);
+        if (!file.exists()) return false;
+
+        // Acumula todas las líneas en un ArregloDinamico
+        ArregloDinamico<String> todasLineas = new ArregloDinamico<>();
+        boolean encontrado = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Ruta r = Ruta.fromCSV(linea);
+                if (r != null && r.getId() == id) {
+                    // Creamos la ruta modificada
+                    Ruta rutaMod = new Ruta(
+                        r.getId(),
+                        r.getRecorrido(),
+                        nuevoPrecio,
+                        nuevoTipoVehiculo,
+                        nuevoHorarioViaje,
+                        nuevaHoraSalida,
+                        r.getCantidadAsientos(),
+                        nuevaFecha
+                    );
+                    todasLineas.agregar(rutaMod.toCSV());
+                    encontrado = true;
+                } else {
+                    todasLineas.agregar(linea);
+                }
+            }
+        }
+
+        if (!encontrado) {
+            // No existe ruta con ese ID
+            return false;
+        }
+
+        // Sobrescribir el archivo con las líneas actualizadas
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
+            for (int i = 0; i < todasLineas.size(); i++) {
+                bw.write(todasLineas.obtener(i));
+                bw.newLine();
+            }
+        }
+
+        return true;
+    }
+    
+    public boolean eliminarRutaPorId(Empresa empresa, int id) {
+        String correo = empresa.getCorreo();
+        File archivoRutas = new File("data/rutas_" + correo + ".csv");
+        File archivoTemporal = new File("data/temp_rutas_" + correo + ".csv");
+        boolean eliminada = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivoRutas));
+             BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal))) {
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                Ruta ruta = Ruta.fromCSV(linea);
+                if (ruta != null && ruta.getId() == id) {
+                    eliminada = true; // Saltamos esta línea
+                    continue;
+                }
+                bw.write(linea);
+                bw.newLine();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        // Reemplazamos el archivo original
+        if (!archivoRutas.delete() || !archivoTemporal.renameTo(archivoRutas)) {
+            System.err.println("Error al reemplazar el archivo de rutas.");
+            return false;
+        }
+
+        return eliminada;
+}
 }

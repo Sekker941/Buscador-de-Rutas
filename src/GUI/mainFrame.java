@@ -21,11 +21,14 @@ public class mainFrame extends javax.swing.JFrame {
     private SistemaRegistro sistema;
     private Viajero viajeroActual;
     private Empresa empresaActual;
+    private Grafo mapa;
+    private Ruta rutaActual;
     
     public mainFrame() throws IOException {
         this.sistema = new SistemaRegistro();
         this.viajeroActual = null;
         this.empresaActual = null;
+        this.mapa = null;
         initComponents();
     }
 
@@ -145,24 +148,25 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
-        jButton23 = new javax.swing.JButton();
-        jComboBox16 = new javax.swing.JComboBox<>();
-        jComboBox17 = new javax.swing.JComboBox<>();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jComboBox18 = new javax.swing.JComboBox<>();
-        jTextField27 = new javax.swing.JTextField();
+        botonRegistraRuta = new javax.swing.JButton();
+        seleccionOrigen = new javax.swing.JComboBox<>();
+        seleccionDestino = new javax.swing.JComboBox<>();
+        fechaRuta = new javax.swing.JTextField();
+        horaRuta = new javax.swing.JTextField();
+        seleccionVehiculo = new javax.swing.JComboBox<>();
+        precioRuta = new javax.swing.JTextField();
+        seleccionTipoHorario = new javax.swing.JComboBox<>();
         jPanel14 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jComboBox12 = new javax.swing.JComboBox<>();
-        jComboBox13 = new javax.swing.JComboBox<>();
-        jComboBox14 = new javax.swing.JComboBox<>();
+        fechaRutaM = new javax.swing.JTextField();
+        horaRutaM = new javax.swing.JTextField();
+        precioRutaM = new javax.swing.JTextField();
+        botonModificarRuta = new javax.swing.JButton();
+        botonEliminarRuta = new javax.swing.JButton();
+        seleccionTipoHorarioM = new javax.swing.JComboBox<>();
+        seleccionVehiculoM = new javax.swing.JComboBox<>();
+        botonBuscarId = new javax.swing.JButton();
+        idRutaM = new javax.swing.JTextField();
         jPanel18 = new javax.swing.JPanel();
         jButton30 = new javax.swing.JButton();
         botonSalirEmpresa = new javax.swing.JButton();
@@ -1475,45 +1479,52 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("Registrar Nuevas Rutas");
 
-        jButton23.setBackground(new java.awt.Color(0, 102, 255));
-        jButton23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(255, 255, 255));
-        jButton23.setText("OK");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        botonRegistraRuta.setBackground(new java.awt.Color(0, 102, 255));
+        botonRegistraRuta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonRegistraRuta.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegistraRuta.setText("OK");
+        botonRegistraRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                botonRegistraRutaActionPerformed(evt);
             }
         });
 
-        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Origen", "Item 2", "Item 3", "Item 4" }));
+        seleccionOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Origen", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox17.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
-        jComboBox17.addActionListener(new java.awt.event.ActionListener() {
+        seleccionDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
+        seleccionDestino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox17ActionPerformed(evt);
+                seleccionDestinoActionPerformed(evt);
             }
         });
 
-        jTextField25.setText("01/06/2001");
-        jTextField25.addActionListener(new java.awt.event.ActionListener() {
+        fechaRuta.setText("01/06/2001");
+        fechaRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField25ActionPerformed(evt);
+                fechaRutaActionPerformed(evt);
             }
         });
 
-        jTextField26.setText("18:45");
-        jTextField26.addActionListener(new java.awt.event.ActionListener() {
+        horaRuta.setText("18:45");
+        horaRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField26ActionPerformed(evt);
+                horaRutaActionPerformed(evt);
             }
         });
 
-        jComboBox18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
+        seleccionVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField27.setText("Costo pasaje");
-        jTextField27.addActionListener(new java.awt.event.ActionListener() {
+        precioRuta.setText("Costo pasaje");
+        precioRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField27ActionPerformed(evt);
+                precioRutaActionPerformed(evt);
+            }
+        });
+
+        seleccionTipoHorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
+        seleccionTipoHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seleccionTipoHorarioActionPerformed(evt);
             }
         });
 
@@ -1524,18 +1535,18 @@ public class mainFrame extends javax.swing.JFrame {
             .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap(197, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox17, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
-                        .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                        .addComponent(jComboBox18, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(188, 188, 188))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonRegistraRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(horaRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fechaRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seleccionDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seleccionOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(precioRuta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(seleccionVehiculo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(seleccionTipoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(193, 193, 193))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1543,20 +1554,22 @@ public class mainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
-                .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(seleccionOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox17, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(seleccionDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fechaRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(horaRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(seleccionTipoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton23)
-                .addGap(93, 93, 93))
+                .addComponent(seleccionVehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(precioRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
+                .addComponent(botonRegistraRuta)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel14.setBackground(new java.awt.Color(204, 229, 255));
@@ -1566,59 +1579,74 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("Modificar Rutas Existentes");
 
-        jTextField22.setText("01/06/2001");
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        fechaRutaM.setText("01/06/2001");
+        fechaRutaM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                fechaRutaMActionPerformed(evt);
             }
         });
 
-        jTextField23.setText("18:45");
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+        horaRutaM.setText("18:45");
+        horaRutaM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
+                horaRutaMActionPerformed(evt);
             }
         });
 
-        jTextField24.setText("Costo Pasaje Tipo A, Tipo B");
-        jTextField24.addActionListener(new java.awt.event.ActionListener() {
+        precioRutaM.setText("Costo Pasaje");
+        precioRutaM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField24ActionPerformed(evt);
+                precioRutaMActionPerformed(evt);
             }
         });
 
-        jButton24.setBackground(new java.awt.Color(0, 102, 255));
-        jButton24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(255, 255, 255));
-        jButton24.setText("OK");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        botonModificarRuta.setBackground(new java.awt.Color(0, 102, 255));
+        botonModificarRuta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonModificarRuta.setForeground(new java.awt.Color(255, 255, 255));
+        botonModificarRuta.setText("OK");
+        botonModificarRuta.setEnabled(false);
+        botonModificarRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                botonModificarRutaActionPerformed(evt);
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(255, 51, 51));
-        jButton25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(255, 255, 255));
-        jButton25.setText("Eliminar");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        botonEliminarRuta.setBackground(new java.awt.Color(255, 51, 51));
+        botonEliminarRuta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonEliminarRuta.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarRuta.setText("Eliminar");
+        botonEliminarRuta.setEnabled(false);
+        botonEliminarRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                botonEliminarRutaActionPerformed(evt);
             }
         });
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Origen", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destino", "Item 2", "Item 3", "Item 4" }));
-        jComboBox13.addActionListener(new java.awt.event.ActionListener() {
+        seleccionTipoHorarioM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        seleccionTipoHorarioM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox13ActionPerformed(evt);
+                seleccionTipoHorarioMActionPerformed(evt);
             }
         });
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
+        seleccionVehiculoM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo de Bus", "Item 2", "Item 3", "Item 4" }));
+
+        botonBuscarId.setBackground(new java.awt.Color(0, 102, 255));
+        botonBuscarId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        botonBuscarId.setForeground(new java.awt.Color(255, 255, 255));
+        botonBuscarId.setText("Buscar ruta");
+        botonBuscarId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarIdActionPerformed(evt);
+            }
+        });
+
+        idRutaM.setText("18:45");
+        idRutaM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idRutaMActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -1629,16 +1657,18 @@ public class mainFrame extends javax.swing.JFrame {
                 .addContainerGap(198, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jButton25)
+                        .addComponent(botonEliminarRuta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField22)
-                    .addComponent(jTextField23)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox12, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox13, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox14, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox11, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(botonModificarRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fechaRutaM)
+                    .addComponent(horaRutaM)
+                    .addComponent(precioRutaM, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(seleccionVehiculoM, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(seleccionTipoHorarioM, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(idRutaM)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonBuscarId)))
                 .addGap(186, 186, 186))
         );
         jPanel14Layout.setVerticalGroup(
@@ -1646,25 +1676,25 @@ public class mainFrame extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton24)
-                    .addComponent(jButton25))
-                .addGap(0, 124, Short.MAX_VALUE))
+                    .addComponent(botonBuscarId)
+                    .addComponent(idRutaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(fechaRutaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(horaRutaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(seleccionTipoHorarioM, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(seleccionVehiculoM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(precioRutaM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonModificarRuta)
+                    .addComponent(botonEliminarRuta))
+                .addGap(0, 135, Short.MAX_VALUE))
         );
 
         jPanel18.setBackground(new java.awt.Color(0, 102, 255));
@@ -1728,7 +1758,7 @@ public class mainFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioEmpresaLayout.createSequentialGroup()
                 .addGroup(InicioEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InicioEmpresaLayout.createSequentialGroup()
-                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(InicioEmpresaLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
@@ -2363,54 +2393,73 @@ public class mainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void botonInicioHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicioHistorialActionPerformed
-        
         CardLayout cl = (CardLayout) getContentPane().getLayout();
         cl.show(getContentPane(), "InicioViajero");
     }//GEN-LAST:event_botonInicioHistorialActionPerformed
 
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
+    private void botonRegistraRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistraRutaActionPerformed
+        String origen = (String) seleccionOrigen.getSelectedItem();
+        String destino = (String) seleccionDestino.getSelectedItem();
+        String horarioViaje = (String) seleccionTipoHorario.getSelectedItem();
+        String tipoVehiculo = (String) seleccionVehiculo.getSelectedItem();
+        String fecha = fechaRuta.getText();
+        String horaSalida = horaRuta.getText();
+        double precio = Double.parseDouble(precioRuta.getText());
+        Municipio[] ruta = mapa.rutaMasCorta(origen, destino);
+        int asientos = empresaActual.calcularAsientos(tipoVehiculo);
+        try {
+            sistema.guardarRutasEmpresa(empresaActual, (empresaActual.crearRuta(1, ruta, precio, tipoVehiculo, horarioViaje, horaSalida, asientos, fecha)));
+        } catch (IOException ex) {
+            Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_botonRegistraRutaActionPerformed
 
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+    private void horaRutaMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horaRutaMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
+    }//GEN-LAST:event_horaRutaMActionPerformed
 
-    private void jTextField24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField24ActionPerformed
+    private void precioRutaMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioRutaMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField24ActionPerformed
+    }//GEN-LAST:event_precioRutaMActionPerformed
 
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
+    private void botonModificarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarRutaActionPerformed
+        String fecha = fechaRutaM.getText();
+        String horaSalida = horaRutaM.getText();
+        String horarioViaje = (String) seleccionTipoHorarioM.getSelectedItem();
+        String tipoVehiculo = (String) seleccionVehiculoM.getSelectedItem();
+        double precio = Double.parseDouble(precioRutaM.getText());
+        int id = rutaActual.getId();
+        try {
+            sistema.modificarRutaEmpresaPorId(empresaActual, id, precio, tipoVehiculo, horarioViaje, horaSalida, fecha);
+        } catch (IOException ex) {
+            Logger.getLogger(mainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_botonModificarRutaActionPerformed
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
+    private void botonEliminarRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarRutaActionPerformed
+        int id = rutaActual.getId();
+        sistema.eliminarRutaPorId(empresaActual, id);
+    }//GEN-LAST:event_botonEliminarRutaActionPerformed
 
-    private void jComboBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox13ActionPerformed
+    private void fechaRutaMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaRutaMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox13ActionPerformed
+    }//GEN-LAST:event_fechaRutaMActionPerformed
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+    private void seleccionDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionDestinoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+    }//GEN-LAST:event_seleccionDestinoActionPerformed
 
-    private void jComboBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox17ActionPerformed
+    private void fechaRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaRutaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox17ActionPerformed
+    }//GEN-LAST:event_fechaRutaActionPerformed
 
-    private void jTextField25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField25ActionPerformed
+    private void horaRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horaRutaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField25ActionPerformed
+    }//GEN-LAST:event_horaRutaActionPerformed
 
-    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
+    private void precioRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioRutaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField26ActionPerformed
-
-    private void jTextField27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField27ActionPerformed
+    }//GEN-LAST:event_precioRutaActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         CardLayout cl = (CardLayout) getContentPane().getLayout();
@@ -2518,6 +2567,41 @@ public class mainFrame extends javax.swing.JFrame {
         cl.show(getContentPane(), "Historial");
     }//GEN-LAST:event_botonHistorial
 
+    private void seleccionTipoHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionTipoHorarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seleccionTipoHorarioActionPerformed
+
+    private void botonBuscarIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarIdActionPerformed
+        int id = Integer.parseInt(idRutaM.getText().trim());
+        try {
+            if (sistema.buscarRutaEmpresaPorId(empresaActual, id) != null){
+                rutaActual = sistema.buscarRutaEmpresaPorId(empresaActual, id);
+                fechaRutaM.setText(rutaActual.getFecha());
+                horaRutaM.setText(rutaActual.getHoraSalida());
+                seleccionTipoHorarioM.setSelectedItem(rutaActual.getHorarioViaje());
+                seleccionVehiculoM.setSelectedItem(rutaActual.getTipoVehiculo());
+                precioRutaM.setText(Double.toString(rutaActual.getPrecio()));
+                botonModificarRuta.setEnabled(true);
+                botonEliminarRuta.setEnabled(true);
+            }
+            else{
+                botonModificarRuta.setEnabled(false);
+                botonEliminarRuta.setEnabled(false);
+                JOptionPane.showMessageDialog(this, "La ruta seleccionada no existe", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Por favor ingrese un número válido", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_botonBuscarIdActionPerformed
+
+    private void seleccionTipoHorarioMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionTipoHorarioMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seleccionTipoHorarioMActionPerformed
+
+    private void idRutaMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idRutaMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idRutaMActionPerformed
+
     private void mostrarRutasEnPanel(ArregloDinamico<Ruta> rutas) {
         // 1) Define las columnas
         String[] columnas = {
@@ -2606,12 +2690,16 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel RegistroViajero;
     private javax.swing.JPanel ResultadosBusqueda;
     private javax.swing.JTextField apellidoR;
+    private javax.swing.JButton botonBuscarId;
+    private javax.swing.JButton botonEliminarRuta;
     private javax.swing.JButton botonHistorial;
     private javax.swing.JButton botonInicioHistorial;
     private javax.swing.JButton botonInicioHistorial1;
     private javax.swing.JButton botonInicioHistorial2;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonLoginE;
+    private javax.swing.JButton botonModificarRuta;
+    private javax.swing.JButton botonRegistraRuta;
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton botonRegistroE;
     private javax.swing.JButton botonSalirEmpresa;
@@ -2631,14 +2719,16 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField correoLE;
     private javax.swing.JTextField correoR;
     private javax.swing.JTextField correoRE;
+    private javax.swing.JTextField fechaRuta;
+    private javax.swing.JTextField fechaRutaM;
+    private javax.swing.JTextField horaRuta;
+    private javax.swing.JTextField horaRutaM;
+    private javax.swing.JTextField idRutaM;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
@@ -2648,13 +2738,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox13;
-    private javax.swing.JComboBox<String> jComboBox14;
-    private javax.swing.JComboBox<String> jComboBox16;
-    private javax.swing.JComboBox<String> jComboBox17;
-    private javax.swing.JComboBox<String> jComboBox18;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox20;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -2742,12 +2825,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField30;
@@ -2760,6 +2837,14 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nombreE;
     private javax.swing.JTextField nombreR;
     private javax.swing.JPanel panelHistorial;
+    private javax.swing.JTextField precioRuta;
+    private javax.swing.JTextField precioRutaM;
+    private javax.swing.JComboBox<String> seleccionDestino;
+    private javax.swing.JComboBox<String> seleccionOrigen;
+    private javax.swing.JComboBox<String> seleccionTipoHorario;
+    private javax.swing.JComboBox<String> seleccionTipoHorarioM;
+    private javax.swing.JComboBox<String> seleccionVehiculo;
+    private javax.swing.JComboBox<String> seleccionVehiculoM;
     private javax.swing.JTextField telefonoE;
     // End of variables declaration//GEN-END:variables
 }
