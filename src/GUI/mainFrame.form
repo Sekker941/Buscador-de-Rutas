@@ -765,9 +765,9 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jToggleButton1" min="-2" pref="196" max="-2" attributes="0"/>
+                                              <Component id="diurnoB" min="-2" pref="196" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jToggleButton2" pref="198" max="32767" attributes="0"/>
+                                              <Component id="nocturnoB" pref="198" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="origenB" max="32767" attributes="0"/>
                                           <Component id="jLabel8" max="32767" attributes="0"/>
@@ -827,9 +827,9 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jToggleButton2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="nocturnoB" alignment="0" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jToggleButton1" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
+                                              <Component id="diurnoB" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                                               <Component id="jToggleButton4" alignment="3" min="-2" pref="62" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
@@ -930,7 +930,7 @@
                 <Property name="text" type="java.lang.String" value="Destino"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+            <Component class="javax.swing.JToggleButton" name="diurnoB">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
@@ -942,10 +942,10 @@
                 <Property name="text" type="java.lang.String" value="Diurno"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jToggleButton1.addItemListener(e -&gt; {&#xa;    if (jToggleButton1.isSelected()) {&#xa;        jToggleButton2.setSelected(false);&#xa;    } else {&#xa;        jToggleButton2.setSelected(true);&#xa;    }&#xa;});"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="diurnoB.addItemListener(e -&gt; {&#xa;    if (diurnoB.isSelected()) {&#xa;        nocturnoB.setSelected(false);&#xa;    } else {&#xa;        nocturnoB.setSelected(true);&#xa;    }&#xa;});"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+            <Component class="javax.swing.JToggleButton" name="nocturnoB">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
@@ -956,7 +956,7 @@
                 <Property name="text" type="java.lang.String" value="Nocturno"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jToggleButton2.addItemListener(e -&gt; {&#xa;    if (jToggleButton2.isSelected()) {&#xa;        jToggleButton1.setSelected(false);&#xa;    } else {&#xa;        jToggleButton1.setSelected(true);&#xa;    }&#xa;});"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="nocturnoB.addItemListener(e -&gt; {&#xa;    if (nocturnoB.isSelected()) {&#xa;        diurnoB.setSelected(false);&#xa;    } else {&#xa;        diurnoB.setSelected(true);&#xa;    }&#xa;});"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JToggleButton" name="jToggleButton4">

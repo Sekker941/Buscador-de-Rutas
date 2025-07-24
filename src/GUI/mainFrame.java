@@ -131,8 +131,8 @@ public class mainFrame extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        diurnoB = new javax.swing.JToggleButton();
+        nocturnoB = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -760,14 +760,14 @@ public class mainFrame extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Destino");
 
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(0, 102, 255));
-        jToggleButton1.setSelected(true);
-        jToggleButton1.setText("Diurno");
+        diurnoB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        diurnoB.setForeground(new java.awt.Color(0, 102, 255));
+        diurnoB.setSelected(true);
+        diurnoB.setText("Diurno");
 
-        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(0, 102, 255));
-        jToggleButton2.setText("Nocturno");
+        nocturnoB.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nocturnoB.setForeground(new java.awt.Color(0, 102, 255));
+        nocturnoB.setText("Nocturno");
 
         jToggleButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jToggleButton4.setForeground(new java.awt.Color(0, 102, 255));
@@ -818,9 +818,9 @@ public class mainFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(diurnoB, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                                        .addComponent(nocturnoB, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
                                     .addComponent(origenB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
@@ -865,9 +865,9 @@ public class mainFrame extends javax.swing.JFrame {
                                     .addComponent(origenB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nocturnoB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(diurnoB, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jComboBox1)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -882,18 +882,18 @@ public class mainFrame extends javax.swing.JFrame {
                         .addGap(32, 32, 32))))
         );
 
-        jToggleButton1.addItemListener(e -> {
-            if (jToggleButton1.isSelected()) {
-                jToggleButton2.setSelected(false);
+        diurnoB.addItemListener(e -> {
+            if (diurnoB.isSelected()) {
+                nocturnoB.setSelected(false);
             } else {
-                jToggleButton2.setSelected(true);
+                nocturnoB.setSelected(true);
             }
         });
-        jToggleButton2.addItemListener(e -> {
-            if (jToggleButton2.isSelected()) {
-                jToggleButton1.setSelected(false);
+        nocturnoB.addItemListener(e -> {
+            if (nocturnoB.isSelected()) {
+                diurnoB.setSelected(false);
             } else {
-                jToggleButton1.setSelected(true);
+                diurnoB.setSelected(true);
             }
         });
 
@@ -2792,6 +2792,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField correoR;
     private javax.swing.JTextField correoRE;
     private javax.swing.JComboBox<String> destinoB;
+    private javax.swing.JToggleButton diurnoB;
     private javax.swing.JTextField fechaRuta;
     private javax.swing.JTextField fechaRutaM;
     private javax.swing.JTextField horaRuta;
@@ -2894,11 +2895,10 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField28;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JTextField nitE;
     private javax.swing.JTextField nitPE;
+    private javax.swing.JToggleButton nocturnoB;
     private javax.swing.JTextField nombreE;
     private javax.swing.JTextField nombrePE;
     private javax.swing.JTextField nombreR;
